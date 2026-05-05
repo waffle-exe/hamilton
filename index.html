@@ -108,49 +108,63 @@
     </button>
 
     <!-- ================= NAVIGATION ================= -->
-    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 bg-transparent py-4 md:py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                
-                <!-- Logo Area -->
-                <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
-                    <div id="logo-box" class="w-12 h-12 flex items-center justify-center rounded-full transition-colors bg-white shadow-sm overflow-hidden border border-stone-100">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK4saAoweQC0p8jY8ouCTKwsplvzGhezazUA&s" alt="Gurdwara Logo" class="w-full h-full object-contain p-1">
-                    </div>
-                    <div class="flex flex-col">
-                        <span id="logo-text" class="font-serif font-bold text-lg md:text-xl leading-tight text-white drop-shadow-md">
-                            Gurdwara Shaheedgarh
-                        </span>
-                        <span id="logo-sub" class="text-[0.60rem] md:text-[0.65rem] tracking-[0.2em] uppercase font-semibold text-white/80 drop-shadow-md">
-                            Hamilton, Ontario
-                        </span>
-                    </div>
-                </div>
-                
-                <!-- Desktop Links -->
-                <nav class="hidden lg:flex items-center space-x-8">
-                    <button onclick="switchView('home')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Home</button>
-                    <button onclick="switchView('history')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">History</button>
-                    <button onclick="switchView('home')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Anand Karaj</button>
-                    <button onclick="switchView('gallery')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Gallery</button>
-                    <button onclick="switchView('booking')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Booking</button>
-                    <button onclick="openGlobalStatusModal()" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Check Status</button>
-                </nav>
+    <header id="main-header" class="fixed w-full z-50 transition-all duration-300 bg-transparent flex flex-col">
+        
+        <!-- Domain Notice Banner -->
+        <div id="domain-notice" class="bg-[#FFB300] text-[#14244B] px-4 py-2 flex justify-between items-center text-xs md:text-sm font-medium shadow-md w-full relative z-[60]">
+            <div class="max-w-7xl mx-auto flex-1 text-center flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3">
+                <i data-lucide="info" class="w-4 h-4 shrink-0 hidden md:block"></i>
+                <span><strong>Note:</strong> Both <strong>hamiltongurdwara.ca</strong> and <strong>hamiltongurdwara.com</strong> are officially owned by Gurdwara Sahib. Feel free to do bookings on either website.</span>
+            </div>
+            <button onclick="document.getElementById('domain-notice').style.display='none'; updateHeaderScrollState();" class="text-[#14244B]/60 hover:text-[#14244B] transition-colors p-1 shrink-0 ml-2">
+                <i data-lucide="x" class="w-4 h-4 md:w-5 md:h-5"></i>
+            </button>
+        </div>
 
-                <!-- Actions -->
-                <div class="hidden lg:flex items-center gap-5">
-                    <button onclick="switchView('login')" class="nav-link text-sm font-medium flex items-center gap-2 hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">
-                        <i data-lucide="user" class="w-4 h-4"></i> Staff
-                    </button>
-                    <button onclick="openDonateModal()" class="bg-[#FFB300] hover:bg-[#E6A200] text-[#14244B] px-6 py-2.5 text-sm font-bold tracking-wide transition-colors rounded-sm shadow-md">
-                        Donate
+        <div id="nav-container" class="py-4 md:py-6 transition-all duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
+                    
+                    <!-- Logo Area -->
+                    <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
+                        <div id="logo-box" class="w-12 h-12 flex items-center justify-center rounded-full transition-colors bg-white shadow-sm overflow-hidden border border-stone-100">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK4saAoweQC0p8jY8ouCTKwsplvzGhezazUA&s" alt="Gurdwara Logo" class="w-full h-full object-contain p-1">
+                        </div>
+                        <div class="flex flex-col">
+                            <span id="logo-text" class="font-serif font-bold text-lg md:text-xl leading-tight text-white drop-shadow-md">
+                                Gurdwara Shaheedgarh
+                            </span>
+                            <span id="logo-sub" class="text-[0.60rem] md:text-[0.65rem] tracking-[0.2em] uppercase font-semibold text-white/80 drop-shadow-md">
+                                Hamilton, Ontario
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Links -->
+                    <nav class="hidden lg:flex items-center space-x-8">
+                        <button onclick="switchView('home')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Home</button>
+                        <button onclick="switchView('history')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">History</button>
+                        <button onclick="switchView('home')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Anand Karaj</button>
+                        <button onclick="switchView('gallery')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Gallery</button>
+                        <button onclick="switchView('booking')" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Booking</button>
+                        <button onclick="openGlobalStatusModal()" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Check Status</button>
+                    </nav>
+
+                    <!-- Actions -->
+                    <div class="hidden lg:flex items-center gap-5">
+                        <button onclick="switchView('login')" class="nav-link text-sm font-medium flex items-center gap-2 hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">
+                            <i data-lucide="user" class="w-4 h-4"></i> Staff
+                        </button>
+                        <button onclick="openDonateModal()" class="bg-[#FFB300] hover:bg-[#E6A200] text-[#14244B] px-6 py-2.5 text-sm font-bold tracking-wide transition-colors rounded-sm shadow-md">
+                            Donate
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                        <i id="menu-icon" data-lucide="menu" class="w-7 h-7 text-white"></i>
                     </button>
                 </div>
-
-                <!-- Mobile Menu Toggle -->
-                <button class="lg:hidden" onclick="toggleMobileMenu()">
-                    <i id="menu-icon" data-lucide="menu" class="w-7 h-7 text-white"></i>
-                </button>
             </div>
         </div>
 
@@ -337,10 +351,10 @@
                     </div>
                 </div>
 
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     <!-- Post 1 -->
                     <article class="group cursor-pointer" onclick="openLightbox('person_10.JPG', '')">
-                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
                             <img src="person_10.JPG" alt="Classes" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
                         <div class="flex items-center gap-4 mb-3">
@@ -353,10 +367,16 @@
                             View poster & Contact: +1 905-525-5725 <i data-lucide="maximize-2" class="w-3.5 h-3.5 ml-1"></i>
                         </span>
                     </article>
+
                     <!-- Post 2 -->
                     <article class="group cursor-pointer" onclick="openVideoModal('Nagarkirtan.mp4')">
                         <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
                             <video src="Nagarkirtan.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-12 h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                                    <i data-lucide="play" class="w-5 h-5 ml-1 fill-current"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -368,10 +388,11 @@
                             Watch video <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                         </span>
                     </article>
+
                     <!-- Post 3 -->
                     <article class="group cursor-pointer" onclick="switchView('history')">
                         <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
-                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
+                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Architecture</span>
@@ -383,10 +404,16 @@
                             Read history <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                         </span>
                     </article>
+
                     <!-- Post 4 -->
                     <article class="group cursor-pointer" onclick="openVideoModal('khanda.mp4')">
                         <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
                             <video src="khanda.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-12 h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                                    <i data-lucide="play" class="w-5 h-5 ml-1 fill-current"></i>
+                                </div>
+                            </div>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -396,6 +423,48 @@
                         <p class="text-[#14244B]/70 text-sm leading-relaxed mb-4 font-light line-clamp-2 md:line-clamp-none">A proud moment for the community as the majestic Khanda is installed at Gurdwara Shaheedgarh Sahib.</p>
                         <span class="text-xs font-bold text-[#14244B] flex items-center gap-1 group-hover:translate-x-2 transition-transform">
                             Watch video <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </article>
+
+                    <!-- Post 5 (YouTube Kids) -->
+                    <article class="group cursor-pointer" onclick="window.open('https://www.youtube.com/watch?v=bh6q4TJuEJQ', '_blank')">
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
+                            <img src="https://img.youtube.com/vi/bh6q4TJuEJQ/maxresdefault.jpg" alt="Learn Punjabi Kids" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                                    <i data-lucide="play" class="w-6 h-6 ml-1 fill-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Education</span>
+                            <span class="w-8 h-[1px] bg-[#14244B]/20"></span>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold text-[#14244B] mb-2 md:mb-3 group-hover:text-[#FFB300] transition-colors">Learn Punjabi (Kids)</h3>
+                        <p class="text-[#14244B]/70 text-sm leading-relaxed mb-4 font-light line-clamp-2 md:line-clamp-none">Let's explore Punjabi together. Engaging video lessons tailored specifically for children.</p>
+                        <span class="text-xs font-bold text-[#14244B] flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Watch on YouTube <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                        </span>
+                    </article>
+
+                    <!-- Post 6 (YouTube Adults) -->
+                    <article class="group cursor-pointer" onclick="window.open('https://youtu.be/FBzMti8u_wU', '_blank')">
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
+                            <img src="https://img.youtube.com/vi/FBzMti8u_wU/maxresdefault.jpg" alt="Learn Punjabi Adults" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                            <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                <div class="w-14 h-14 bg-red-600 rounded-full flex items-center justify-center shadow-lg text-white group-hover:scale-110 transition-transform">
+                                    <i data-lucide="play" class="w-6 h-6 ml-1 fill-current"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 mb-3">
+                            <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Education</span>
+                            <span class="w-8 h-[1px] bg-[#14244B]/20"></span>
+                        </div>
+                        <h3 class="font-serif text-lg md:text-xl font-bold text-[#14244B] mb-2 md:mb-3 group-hover:text-[#FFB300] transition-colors">Learn Punjabi (Adults)</h3>
+                        <p class="text-[#14244B]/70 text-sm leading-relaxed mb-4 font-light line-clamp-2 md:line-clamp-none">Let's explore Punjabi together. Over 100 common Punjabi words for adults to learn.</p>
+                        <span class="text-xs font-bold text-[#14244B] flex items-center gap-1 group-hover:translate-x-2 transition-transform">
+                            Watch on YouTube <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </span>
                     </article>
                 </div>
@@ -1038,6 +1107,17 @@
                             <i data-lucide="mail" class="text-[#14244B]/40 shrink-0 w-4 h-4"></i>
                             <span>hamiltongurdwara@gmail.com</span>
                         </p>
+                        <div class="flex items-center gap-4 pt-4">
+                            <a href="https://www.youtube.com/@ShaheedgarhSahib" target="_blank" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
+                                <i data-lucide="youtube" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.facebook.com/hamiltongurdwara" target="_blank" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
+                                <i data-lucide="facebook" class="w-4 h-4"></i>
+                            </a>
+                            <a href="https://www.instagram.com/shaheedgarh.sahib.hamilton/" target="_blank" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
+                                <i data-lucide="instagram" class="w-4 h-4"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1290,6 +1370,7 @@
 
         function updateHeaderScrollState() {
             const header = document.getElementById('main-header');
+            const navContainer = document.getElementById('nav-container');
             const logoText = document.getElementById('logo-text');
             const logoSub = document.getElementById('logo-sub');
             const navLinks = document.querySelectorAll('.nav-link');
@@ -1298,8 +1379,11 @@
             const isScrolled = window.scrollY > 20 || isMobileMenuOpen || currentActiveView !== 'home';
 
             if (isScrolled) {
-                header.classList.add('bg-white', 'border-b', 'border-[#14244B]/10', 'py-3', 'shadow-sm');
-                header.classList.remove('bg-transparent', 'py-4', 'md:py-6');
+                header.classList.add('bg-white', 'shadow-sm');
+                header.classList.remove('bg-transparent');
+                navContainer.classList.add('py-3', 'border-b', 'border-[#14244B]/10');
+                navContainer.classList.remove('py-4', 'md:py-6');
+
                 logoText.classList.add('text-[#14244B]');
                 logoText.classList.remove('text-white', 'drop-shadow-md');
                 logoSub.classList.add('text-[#14244B]/60');
@@ -1307,8 +1391,11 @@
                 navLinks.forEach(link => { link.classList.add('text-[#14244B]/80'); link.classList.remove('text-white', 'drop-shadow-sm'); });
                 if(menuIcon) { menuIcon.classList.add('text-[#14244B]'); menuIcon.classList.remove('text-white'); }
             } else {
-                header.classList.remove('bg-white', 'border-b', 'border-[#14244B]/10', 'py-3', 'shadow-sm');
-                header.classList.add('bg-transparent', 'py-4', 'md:py-6');
+                header.classList.remove('bg-white', 'shadow-sm');
+                header.classList.add('bg-transparent');
+                navContainer.classList.remove('py-3', 'border-b', 'border-[#14244B]/10');
+                navContainer.classList.add('py-4', 'md:py-6');
+
                 logoText.classList.remove('text-[#14244B]');
                 logoText.classList.add('text-white', 'drop-shadow-md');
                 logoSub.classList.remove('text-[#14244B]/60');
@@ -1481,7 +1568,7 @@
         const today = new Date(); // To track actual 'today'
 
         // Predefined time slots
-        const timeSlots = ["08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM"];
+        const timeSlots = ["08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM"];
 
         // 4. Admin Auth Logic
         const loginForm = document.getElementById('adminLoginForm');
