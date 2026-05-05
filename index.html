@@ -125,16 +125,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between items-center">
                     
-                    <!-- Logo Area -->
-                    <div class="flex items-center gap-3 cursor-pointer group" onclick="switchView('home')">
-                        <div id="logo-box" class="w-12 h-12 flex items-center justify-center rounded-full transition-colors bg-white shadow-sm overflow-hidden border border-stone-100">
+                    <!-- Logo Area (FIXED FOR MOBILE MERGING) -->
+                    <div class="flex items-center gap-2 sm:gap-3 cursor-pointer group max-w-[75%] sm:max-w-none" onclick="switchView('home')">
+                        <div id="logo-box" class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center rounded-full transition-colors bg-white shadow-sm overflow-hidden border border-stone-100">
                             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK4saAoweQC0p8jY8ouCTKwsplvzGhezazUA&s" alt="Gurdwara Logo" class="w-full h-full object-contain p-1">
                         </div>
-                        <div class="flex flex-col">
-                            <span id="logo-text" class="font-serif font-bold text-lg md:text-xl leading-tight text-white drop-shadow-md">
+                        <div class="flex flex-col min-w-0">
+                            <span id="logo-text" class="font-serif font-bold text-base sm:text-lg md:text-xl leading-tight text-white drop-shadow-md truncate">
                                 Gurdwara Shaheedgarh
                             </span>
-                            <span id="logo-sub" class="text-[0.60rem] md:text-[0.65rem] tracking-[0.2em] uppercase font-semibold text-white/80 drop-shadow-md">
+                            <span id="logo-sub" class="text-[0.55rem] sm:text-[0.60rem] md:text-[0.65rem] tracking-[0.1em] sm:tracking-[0.2em] uppercase font-semibold text-white/80 drop-shadow-md truncate">
                                 Hamilton, Ontario
                             </span>
                         </div>
@@ -161,7 +161,7 @@
                     </div>
 
                     <!-- Mobile Menu Toggle -->
-                    <button class="lg:hidden" onclick="toggleMobileMenu()">
+                    <button class="lg:hidden shrink-0 ml-2" onclick="toggleMobileMenu()">
                         <i id="menu-icon" data-lucide="menu" class="w-7 h-7 text-white"></i>
                     </button>
                 </div>
@@ -1139,11 +1139,81 @@
                 <p class="text-center md:text-left text-[#14244B]/60">Website designed and developed by <a href="https://www.astrodingra.in" target="_blank" rel="noopener noreferrer" class="text-[#FFB300] hover:text-[#14244B] font-bold transition-colors">Jashanpreet Singh Dingra</a>.</p>
             </div>
             <div class="flex gap-4 md:gap-6">
-                <a href="#" class="hover:text-[#14244B] transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-[#14244B] transition-colors">Terms of Service</a>
+                <button onclick="openPrivacyModal()" class="hover:text-[#14244B] transition-colors text-left">Privacy Policy</button>
+                <button onclick="openTermsModal()" class="hover:text-[#14244B] transition-colors text-left">Terms of Service</button>
             </div>
         </div>
     </footer>
+
+    <!-- ================= PRIVACY POLICY MODAL ================= -->
+    <div id="privacy-modal" class="hidden-view fixed inset-0 z-[200] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closePrivacyModal()">
+        <div class="bg-white w-full max-w-2xl rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar text-left" onclick="event.stopPropagation()">
+            <div class="sticky top-0 bg-white border-b border-[#14244B]/10 p-4 md:p-6 flex justify-between items-center z-10">
+                <h2 class="font-serif text-2xl text-[#14244B]">Privacy Policy</h2>
+                <button onclick="closePrivacyModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 md:p-8 space-y-6 text-[#14244B]/80 text-sm font-light leading-relaxed">
+                <p>Welcome to Gurdwara Shaheedgarh Sahib's website. Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use our booking and inquiry services.</p>
+
+                <h3 class="font-bold text-[#14244B] text-base">1. Information We Collect</h3>
+                <p>When you submit a booking request or inquiry, we collect the following personal information:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><strong>Personal Details:</strong> Your Full Name, Phone Number, and Email Address.</li>
+                    <li><strong>Booking Data:</strong> Programme dates, selected times, and specific requests.</li>
+                    <li><strong>Payment Proofs:</strong> Screenshots of e-transfer receipts used to verify advance payments.</li>
+                </ul>
+
+                <h3 class="font-bold text-[#14244B] text-base">2. How We Use Your Information</h3>
+                <p>The data we collect is used strictly for administrative and communication purposes, specifically to:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li>Process, verify, and confirm your programme bookings (e.g., Anand Karaj, Akhand Path).</li>
+                    <li>Respond to your direct inquiries and provide support.</li>
+                    <li>Maintain a secure internal record of Gurdwara events and associated payments.</li>
+                </ul>
+
+                <h3 class="font-bold text-[#14244B] text-base">3. Data Security and Storage</h3>
+                <p>Your information is stored securely in our database systems. Payment screenshots are kept for verification and accounting audits. Access to this data is strictly limited to authorized Gurdwara committee members and system administrators.</p>
+
+                <h3 class="font-bold text-[#14244B] text-base">4. Data Sharing</h3>
+                <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. Your data is only shared internally with the committee for the purpose of fulfilling your requests.</p>
+
+                <p class="pt-4 border-t border-[#14244B]/10">If you have any questions or wish to request the deletion of your data, please contact us at <strong>hamiltongurdwara@gmail.com</strong> or call <strong>+1 905-525-5725</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= TERMS OF SERVICE MODAL ================= -->
+    <div id="terms-modal" class="hidden-view fixed inset-0 z-[200] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closeTermsModal()">
+        <div class="bg-white w-full max-w-2xl rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar text-left" onclick="event.stopPropagation()">
+            <div class="sticky top-0 bg-white border-b border-[#14244B]/10 p-4 md:p-6 flex justify-between items-center z-10">
+                <h2 class="font-serif text-2xl text-[#14244B]">Terms of Service</h2>
+                <button onclick="closeTermsModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+            <div class="p-6 md:p-8 space-y-6 text-[#14244B]/80 text-sm font-light leading-relaxed">
+                <p>By using the Gurdwara Shaheedgarh Sahib website to submit inquiries or book programmes, you agree to the following terms and conditions:</p>
+
+                <h3 class="font-bold text-[#14244B] text-base">1. Booking Requests & Confirmation</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Submitting a booking request via this website does <strong>not</strong> guarantee immediate confirmation. All bookings are subject to availability and committee approval.</li>
+                    <li>A booking is only considered confirmed after an advance payment of <strong>$1000</strong> is sent via e-transfer to <strong>hamiltongurdwara@gmail.com</strong>.</li>
+                    <li>You must submit your online request along with the payment screenshot within 24 hours of making the e-transfer.</li>
+                </ul>
+
+                <h3 class="font-bold text-[#14244B] text-base">2. Cancellations & Modifications</h3>
+                <p>If you need to cancel or modify your booking, please contact the Gurdwara committee immediately at <strong>+1 905-525-5725</strong>. Refund policies for the advance payment are subject to the committee's discretion based on the notice period provided.</p>
+
+                <h3 class="font-bold text-[#14244B] text-base">3. User Responsibilities</h3>
+                <p>You agree to provide accurate and truthful information when filling out forms. Uploading false payment proofs or spamming the inquiry system may result in your phone number/email being blocked from the platform.</p>
+
+                <h3 class="font-bold text-[#14244B] text-base">4. Privacy</h3>
+                <p>Your use of our forms constitutes agreement to our Privacy Policy, acknowledging that we collect your name, contact details, and payment proofs to facilitate Gurdwara services.</p>
+            </div>
+        </div>
+    </div>
 
     <!-- ================= VIDEO MODAL ================= -->
     <div id="video-modal" class="hidden-view fixed inset-0 z-[100] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeVideoModal()">
@@ -1474,6 +1544,20 @@
             if(isMobileMenuOpen) toggleMobileMenu();
         }
         function closeGlobalStatusModal() { document.getElementById('global-status-modal').classList.add('hidden-view'); }
+
+        // New modals functionality
+        function openPrivacyModal() {
+            document.getElementById('privacy-modal').classList.remove('hidden-view');
+            if(isMobileMenuOpen) toggleMobileMenu();
+        }
+        function closePrivacyModal() { document.getElementById('privacy-modal').classList.add('hidden-view'); }
+
+        function openTermsModal() {
+            document.getElementById('terms-modal').classList.remove('hidden-view');
+            if(isMobileMenuOpen) toggleMobileMenu();
+        }
+        function closeTermsModal() { document.getElementById('terms-modal').classList.add('hidden-view'); }
+
 
         function openLightbox(imageSrc, captionText) {
             document.getElementById('lightbox-img').src = imageSrc;
