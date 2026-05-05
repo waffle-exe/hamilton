@@ -340,7 +340,7 @@
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Post 1 -->
                     <article class="group cursor-pointer" onclick="openLightbox('person_10.JPG', 'Gurmat / Punjabi Classes Poster')">
-                        <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
                             <img src="person_10.JPG" alt="Classes" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
                         <div class="flex items-center gap-4 mb-3">
@@ -355,8 +355,8 @@
                     </article>
                     <!-- Post 2 -->
                     <article class="group cursor-pointer" onclick="openVideoModal('Nagarkirtan.mp4')">
-                        <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
-                            <video src="Nagarkirtan.mp4" autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
+                            <video src="Nagarkirtan.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -370,8 +370,8 @@
                     </article>
                     <!-- Post 3 -->
                     <article class="group cursor-pointer" onclick="switchView('history')">
-                        <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
-                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
+                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Architecture</span>
@@ -385,8 +385,8 @@
                     </article>
                     <!-- Post 4 -->
                     <article class="group cursor-pointer" onclick="openVideoModal('khanda.mp4')">
-                        <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
-                            <video src="khanda.mp4" autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                        <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
+                            <video src="khanda.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -1074,7 +1074,7 @@
     <!-- ================= VIDEO MODAL ================= -->
     <div id="video-modal" class="hidden-view fixed inset-0 z-[100] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeVideoModal()">
         <div class="bg-[#14244B] w-full max-w-5xl rounded-sm shadow-2xl border border-[#1E366E] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
-            <div class="flex justify-between items-center p-4 border-b border-[#1E366E]">
+            <div class="flex justify-between items-center p-4 border-b border-[#1E366E] shrink-0">
                 <div class="flex items-center gap-3">
                     <h3 class="font-serif text-white font-bold text-lg md:text-xl">Watch Video</h3>
                 </div>
@@ -1082,8 +1082,8 @@
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
             </div>
-            <div class="relative w-full aspect-video bg-black flex items-center justify-center">
-                <video id="main-video-player" controls class="w-full h-full object-contain" poster="http://hamiltongurdwara.ca/images/bg_2.jpg">
+            <div class="relative w-full bg-black flex items-center justify-center overflow-hidden" style="height: 75vh;">
+                <video id="main-video-player" controls class="w-full h-full object-contain">
                     Your browser does not support the video tag.
                 </video>
             </div>
