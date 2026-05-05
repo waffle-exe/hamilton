@@ -339,7 +339,7 @@
 
                 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                     <!-- Post 1 -->
-                    <article class="group cursor-pointer">
+                    <article class="group cursor-pointer" onclick="openLightbox('person_10.JPG', 'Gurmat / Punjabi Classes Poster')">
                         <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
                             <img src="person_10.JPG" alt="Classes" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
@@ -350,13 +350,13 @@
                         <h3 class="font-serif text-lg md:text-xl font-bold text-[#14244B] mb-2 md:mb-3 group-hover:text-[#FFB300] transition-colors">Gurmat / Punjabi Classes</h3>
                         <p class="text-[#14244B]/70 text-sm leading-relaxed mb-4 font-light line-clamp-2 md:line-clamp-none">Let your kids learn the history of Sikhism and "Guru Di Matt". Classes held every Sunday.</p>
                         <span class="text-xs font-bold text-[#14244B] flex items-center gap-1 group-hover:translate-x-2 transition-transform">
-                            Contact: +1 905-525-5725 <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+                            View poster & Contact: +1 905-525-5725 <i data-lucide="maximize-2" class="w-3.5 h-3.5 ml-1"></i>
                         </span>
                     </article>
                     <!-- Post 2 -->
-                    <article class="group cursor-pointer">
+                    <article class="group cursor-pointer" onclick="openVideoModal('Nagarkirtan.mp4')">
                         <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
-                            <video src="Nagarkirtan.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                            <video src="Nagarkirtan.mp4" autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"></video>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -371,7 +371,7 @@
                     <!-- Post 3 -->
                     <article class="group cursor-pointer" onclick="switchView('history')">
                         <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
-                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out" />
+                            <img src="img_8.jpg" alt="Dome Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Architecture</span>
@@ -384,9 +384,9 @@
                         </span>
                     </article>
                     <!-- Post 4 -->
-                    <article class="group cursor-pointer">
+                    <article class="group cursor-pointer" onclick="openVideoModal('khanda.mp4')">
                         <div class="aspect-[4/3] overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
-                            <video src="khanda.mp4" autoplay loop muted playsinline class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 ease-out"></video>
+                            <video src="khanda.mp4" autoplay loop muted playsinline class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"></video>
                         </div>
                         <div class="flex items-center gap-4 mb-3">
                             <span class="text-xs font-bold text-[#FFB300] uppercase tracking-widest">Community</span>
@@ -1076,7 +1076,7 @@
         <div class="bg-[#14244B] w-full max-w-5xl rounded-sm shadow-2xl border border-[#1E366E] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center p-4 border-b border-[#1E366E]">
                 <div class="flex items-center gap-3">
-                    <h3 class="font-serif text-white font-bold text-lg md:text-xl">Glimpse of Gurdwara Sahib</h3>
+                    <h3 class="font-serif text-white font-bold text-lg md:text-xl">Watch Video</h3>
                 </div>
                 <button onclick="closeVideoModal()" class="text-white/60 hover:text-[#FFB300] transition-colors p-1">
                     <i data-lucide="x" class="w-6 h-6"></i>
@@ -1084,7 +1084,6 @@
             </div>
             <div class="relative w-full aspect-video bg-black flex items-center justify-center">
                 <video id="main-video-player" controls class="w-full h-full object-contain" poster="http://hamiltongurdwara.ca/images/bg_2.jpg">
-                    <source src="http://hamiltongurdwara.ca/images/Hamilton%20Gurdwara%20Video.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -1362,11 +1361,19 @@
             }
         }
 
-        function openVideoModal() { document.getElementById('video-modal').classList.remove('hidden-view'); }
+        function openVideoModal(videoSrc = 'http://hamiltongurdwara.ca/images/Hamilton%20Gurdwara%20Video.mp4') { 
+            const videoPlayer = document.getElementById('main-video-player');
+            videoPlayer.src = videoSrc;
+            document.getElementById('video-modal').classList.remove('hidden-view'); 
+            videoPlayer.play().catch(e => console.log('Auto-play prevented'));
+        }
         function closeVideoModal() {
             document.getElementById('video-modal').classList.add('hidden-view');
             const videoPlayer = document.getElementById('main-video-player');
-            if (videoPlayer) videoPlayer.pause();
+            if (videoPlayer) {
+                videoPlayer.pause();
+                videoPlayer.currentTime = 0;
+            }
         }
 
         function openDonateModal() {
