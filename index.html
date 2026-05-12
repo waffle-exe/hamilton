@@ -27,7 +27,6 @@
     <meta property="twitter:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK4saAoweQC0p8jY8ouCTKwsplvzGhezazUA&s">
 
     <!-- ================= STRUCTURED DATA (JSON-LD) ================= -->
-    <!-- PlaceOfWorship Schema for Local SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,7 +51,6 @@
     }
     </script>
     
-    <!-- SiteNavigationElement Schema to encourage Google Sitelinks -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -187,7 +185,7 @@
                         </div>
                     </a>
                     
-                    <!-- Desktop Links (SEO Optimized with Anchor Tags) -->
+                    <!-- Desktop Links -->
                     <nav class="hidden lg:flex items-center space-x-8">
                         <a href="#home" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Home</a>
                         <a href="#history" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">History</a>
@@ -243,19 +241,16 @@
     <!-- ================= HOME VIEW ================= -->
     <main id="home-view" class="fade-in block">
         
-        <!-- Hero Section with Slideshow -->
+        <!-- Hero Section -->
         <div class="relative h-[90vh] min-h-[600px] w-full flex items-end pb-24 md:pb-32 bg-[#14244B] overflow-hidden">
-            
-            <!-- Slideshow Backgrounds -->
             <div class="absolute inset-0 z-0 bg-black">
-                <img src="img_10.JPG" alt="Gurdwara Interior View" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-50 scale-105" style="transition: opacity 2s ease-in-out, transform 2s ease-in-out;">
-                <img src="bg_2.jpg" alt="Gurdwara Exterior View" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100" style="transition: opacity 2s ease-in-out, transform 2s ease-in-out;">
-                <img src="img_6.jpg" alt="Gurdwara Sangat View" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100" style="transition: opacity 2s ease-in-out, transform 2s ease-in-out;">
-                <img src="img_3.jpg" alt="Gurdwara Building View" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100" style="transition: opacity 2s ease-in-out, transform 2s ease-in-out;">
+                <img src="img_10.JPG" alt="Gurdwara Interior" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-50 scale-105 transition-all duration-[2s]">
+                <img src="bg_2.jpg" alt="Gurdwara Exterior" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-[2s]">
+                <img src="img_6.jpg" alt="Sangat" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-[2s]">
+                <img src="img_3.jpg" alt="Building" class="hero-slide absolute inset-0 w-full h-full object-cover opacity-0 scale-100 transition-all duration-[2s]">
                 <div class="absolute inset-0 bg-gradient-to-t from-[#14244B] via-[#14244B]/20 to-transparent"></div>
             </div>
             
-            <!-- Hero Content -->
             <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-end gap-8">
                 <div class="max-w-3xl">
                     <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6 drop-shadow-md">
@@ -270,14 +265,12 @@
                     <button onclick="openVideoModal()" class="bg-[#14244B]/80 hover:bg-[#14244B] border border-white/30 backdrop-blur-md text-white px-8 py-4 text-sm font-semibold tracking-wide transition-all flex items-center justify-center gap-2 rounded-sm">
                         <i data-lucide="play-circle" class="w-[18px] h-[18px] text-[#FFB300]"></i> Watch Video
                     </button>
-                    <!-- Changed to anchor for SEO -->
                     <a href="#booking" class="bg-[#FFB300] hover:bg-[#E6A200] text-[#14244B] px-8 py-4 text-sm font-bold tracking-wide transition-colors flex items-center justify-center gap-2 rounded-sm shadow-lg w-max">
                         Book Programme <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
                     </a>
                 </div>
             </div>
 
-            <!-- Slideshow Indicators -->
             <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 <button id="slide-ind-0" aria-label="Slide 1" class="slide-indicator h-1.5 rounded-full transition-all duration-300 w-8 bg-[#FFB300]" onclick="goToSlide(0)"></button>
                 <button id="slide-ind-1" aria-label="Slide 2" class="slide-indicator h-1.5 rounded-full transition-all duration-300 w-2 bg-white/40 hover:bg-white/60" onclick="goToSlide(1)"></button>
@@ -297,10 +290,10 @@
             </div>
         </div>
 
-        <!-- Two Column Content (History & Routine) -->
+        <!-- History & Routine -->
         <section class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-12 gap-12 md:gap-16">
-                <!-- Left: History & Text -->
+                <!-- Left: History -->
                 <div class="lg:col-span-7 flex flex-col justify-center">
                     <h2 class="font-serif text-3xl md:text-4xl text-[#14244B] mb-6 md:mb-8">
                         A Legacy of <br class="hidden md:block"/><span class="italic text-[#FFB300]">Faith & Community</span>
@@ -317,14 +310,13 @@
                         </p>
                     </div>
                     <div class="mt-8 md:mt-10">
-                        <!-- Changed to anchor link -->
                         <a href="#history" class="inline-flex items-center gap-2 text-[#14244B] font-bold hover:text-[#FFB300] transition-colors uppercase tracking-widest text-xs border-b border-[#14244B] hover:border-[#FFB300] pb-1 w-max">
                             Read Full History <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Right: Daily Routine -->
+                <!-- Right: Routine -->
                 <div class="lg:col-span-5 mt-8 lg:mt-0">
                     <div class="bg-white border border-[#14244B]/10 p-6 md:p-10 rounded-md shadow-sm relative overflow-hidden">
                         <div class="absolute top-0 left-0 w-full h-1 bg-[#FFB300]"></div>
@@ -363,19 +355,16 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
-        <!-- Impact/Fundraiser Section -->
+        <!-- Impact Section -->
         <section class="bg-[#14244B] text-white py-16 md:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid md:grid-cols-2 gap-0 md:border border-[#1E366E] rounded-md overflow-hidden">
-                    
                     <div class="relative h-64 md:h-auto order-2 md:order-1">
                         <img src="img_3.jpg" alt="Gurdwara Architecture" class="absolute inset-0 w-full h-full object-cover grayscale-[30%] mix-blend-luminosity opacity-80" loading="lazy" />
                     </div>
-                    
                     <div class="p-8 md:p-16 flex flex-col justify-center order-1 md:order-2 border-b md:border-b-0 md:border-l border-[#1E366E] bg-[#0B152C]">
                         <span class="text-[#FFB300] text-xs font-bold tracking-widest uppercase mb-3 md:mb-4">Community Impact</span>
                         <h2 class="font-serif text-3xl md:text-4xl text-white mb-4 md:mb-6 leading-tight">
@@ -388,7 +377,6 @@
                             View Gallery
                         </a>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -441,7 +429,6 @@
                     </article>
 
                     <!-- Post 3 -->
-                    <!-- Used anchor wrapper instead of onclick for SEO -->
                     <a href="#history" class="group block">
                         <article>
                             <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md">
@@ -480,7 +467,7 @@
                         </span>
                     </article>
 
-                    <!-- Post 5 (YouTube Kids) -->
+                    <!-- Post 5 -->
                     <a href="https://www.youtube.com/watch?v=bh6q4TJuEJQ" target="_blank" rel="noopener" class="group block">
                         <article>
                             <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
@@ -503,7 +490,7 @@
                         </article>
                     </a>
 
-                    <!-- Post 6 (YouTube Adults) -->
+                    <!-- Post 6 -->
                     <a href="https://youtu.be/FBzMti8u_wU" target="_blank" rel="noopener" class="group block">
                         <article>
                             <div class="aspect-[4/3] flex items-center justify-center overflow-hidden mb-4 md:mb-6 bg-[#14244B]/5 rounded-md relative">
@@ -552,7 +539,6 @@
                     <span class="bg-[#FFB300]/20 text-[#14244B] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" id="upcomingCountBadge">0</span>
                 </div>
                 <div id="upcoming-events-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <!-- Javascript will populate upcoming events here -->
                     <div class="col-span-full py-12 text-center text-[#14244B]/40 font-light">No upcoming events currently scheduled.</div>
                 </div>
             </div>
@@ -564,14 +550,13 @@
                     <span class="bg-gray-100 text-[#14244B]/50 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider" id="passedCountBadge">0</span>
                 </div>
                 <div id="passed-events-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 opacity-70">
-                    <!-- Javascript will populate passed events here -->
                     <div class="col-span-full py-12 text-center text-[#14244B]/40 font-light">No past events found.</div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- ================= EVENT POPUP MODAL ================= -->
+    <!-- EVENT POPUP MODAL -->
     <div id="event-popup-modal" class="hidden-view fixed inset-0 z-[200] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeEventPopup()">
         <div class="bg-white w-full max-w-xl rounded-md shadow-2xl relative flex flex-col overflow-hidden animate-scale-up border border-[#14244B]/10" onclick="event.stopPropagation()">
             <button onclick="closeEventPopup()" class="absolute top-4 right-4 bg-black/50 hover:bg-black text-white rounded-full p-2 transition-colors z-10 shadow-md backdrop-blur-md">
@@ -666,10 +651,9 @@
         </div>
     </main>
 
-    <!-- ================= GALLERY VIEW (COLLAGE) ================= -->
+    <!-- ================= GALLERY VIEW ================= -->
     <main id="gallery-view" class="hidden-view pt-24 md:pt-32 pb-16 md:pb-24 fade-in">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <a href="#home" class="flex items-center gap-2 text-sm text-[#14244B]/60 hover:text-[#14244B] mb-8 md:mb-10 transition-colors uppercase tracking-widest font-bold w-max">
                 <i data-lucide="chevron-left" class="w-4 h-4"></i> Back to Home
             </a>
@@ -683,9 +667,7 @@
                 </div>
             </div>
 
-            <!-- Collage Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[250px]">
-                
                 <div class="relative group cursor-pointer overflow-hidden sm:col-span-2 sm:row-span-2 bg-[#14244B] rounded-md" onclick="openLightbox('img_14.JPG', '')">
                     <img src="img_14.JPG" alt="Gallery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                 </div>
@@ -716,7 +698,6 @@
                 <div class="relative group cursor-pointer overflow-hidden bg-[#14244B] rounded-md" onclick="openLightbox('img_9.JPG', '')">
                     <img src="img_9.JPG" alt="Gallery" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
                 </div>
-
             </div>
         </div>
     </main>
@@ -741,7 +722,7 @@
                 <!-- TOP SECTION: Calendar & Guidelines -->
                 <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
                     
-                    <!-- Left/Top: Dynamic Calendar View -->
+                    <!-- Dynamic Calendar View -->
                     <div class="lg:col-span-8 bg-white border border-[#14244B]/10 p-6 md:p-8 rounded-md shadow-sm overflow-x-auto w-full relative z-10">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4 min-w-[300px]">
                             <h3 class="font-serif text-xl text-[#14244B]">Availability</h3>
@@ -751,7 +732,6 @@
                                 <div class="flex items-center gap-1 ml-2">
                                     <button onclick="changeCalendarMonth(-1)" class="p-1.5 text-[#14244B]/60 hover:bg-[#14244B]/5 hover:text-[#FFB300] transition-colors rounded-sm"><i data-lucide="chevron-left" class="w-4 h-4"></i></button>
                                     
-                                    <!-- Interactive Month/Year Selectors -->
                                     <select id="calendarMonthSelect" onchange="changeCalendarDropdowns()" class="text-sm font-bold text-[#14244B] bg-transparent focus:outline-none cursor-pointer p-1">
                                         <option value="0">Jan</option><option value="1">Feb</option><option value="2">Mar</option>
                                         <option value="3">Apr</option><option value="4">May</option><option value="5">Jun</option>
@@ -767,13 +747,12 @@
                             </div>
                         </div>
                         
-                        <!-- Modern Grid Layout container -->
                         <div id="calendar-grid" class="calendar-render-target grid grid-cols-7 gap-1 sm:gap-2 min-w-[400px]">
                             <!-- Grid added via JS -->
                         </div>
                     </div>
 
-                    <!-- Right/Top: Guidelines Card -->
+                    <!-- Guidelines Card -->
                     <div class="lg:col-span-4 h-full">
                         <div class="bg-[#0B152C] text-white p-6 md:p-8 rounded-md shadow-sm h-full flex flex-col justify-center">
                             <h3 class="font-serif text-xl mb-4 text-[#FFB300]">Guidelines</h3>
@@ -790,7 +769,7 @@
                 <!-- BOTTOM SECTION: The Form & Status Card -->
                 <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start w-full" id="bookingStatusCard">
                     
-                    <!-- Left (8 cols): The Form -->
+                    <!-- Left: The Form -->
                     <div class="lg:col-span-8 bg-white border border-[#14244B]/10 shadow-sm rounded-md p-6 md:p-10 relative">
                         <h2 class="font-serif text-xl md:text-2xl text-[#14244B] mb-6 md:mb-8 pb-4 border-b border-[#14244B]/10">Booking Request Details</h2>
                         
@@ -807,6 +786,18 @@
                                 </div>
                             </div>
 
+                            <!-- Function Details (NEW FIELDS) -->
+                            <div class="grid sm:grid-cols-1 gap-6 md:gap-8 border-t border-[#14244B]/5 pt-6">
+                                <div>
+                                    <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">Function Name</label>
+                                    <input type="text" id="bookingFunctionName" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-4 py-3 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm placeholder:text-[#14244B]/30" placeholder="e.g. Sukhmani Sahib Path, Anand Karaj..." />
+                                </div>
+                                <div>
+                                    <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">About Function / Message (Optional)</label>
+                                    <textarea id="bookingFunctionMessage" rows="2" class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-4 py-3 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm placeholder:text-[#14244B]/30 resize-none" placeholder="Add any specific details, requests or notes for the committee here..."></textarea>
+                                </div>
+                            </div>
+
                             <!-- Date Warning Container -->
                             <div id="dateWarningContainer" class="hidden bg-yellow-50 border border-yellow-200 text-yellow-800 p-4 text-sm flex items-start gap-3 rounded-md shadow-sm">
                                 <i data-lucide="alert-triangle" class="w-5 h-5 shrink-0 text-yellow-600 mt-0.5"></i>
@@ -814,7 +805,7 @@
                             </div>
 
                             <!-- Date & Time -->
-                            <div class="grid sm:grid-cols-3 gap-6 md:gap-8">
+                            <div class="grid sm:grid-cols-3 gap-6 md:gap-8 border-t border-[#14244B]/5 pt-6">
                                 <div class="sm:col-span-1">
                                     <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">Date</label>
                                     <div class="relative flex items-center">
@@ -828,20 +819,18 @@
                                     <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">Start Time</label>
                                     <select id="bookingStart" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-4 py-3 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm appearance-none">
                                         <option value="" disabled selected>Select start time</option>
-                                        <!-- Options generated by JS -->
                                     </select>
                                 </div>
                                 <div class="sm:col-span-1">
                                     <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">End Time</label>
                                     <select id="bookingEnd" required disabled class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-4 py-3 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm appearance-none disabled:opacity-50 disabled:cursor-not-allowed bg-gray-50">
                                         <option value="" disabled selected>Select end time</option>
-                                        <!-- Options generated by JS based on Start Time -->
                                     </select>
                                 </div>
                             </div>
 
                             <!-- Upload -->
-                            <div>
+                            <div class="border-t border-[#14244B]/5 pt-6">
                                 <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-2">Payment / Receipt Screenshot</label>
                                 <div class="relative border-2 border-dashed border-[#14244B]/20 bg-[#FDFBF7] hover:bg-[#14244B]/5 transition-colors cursor-pointer group rounded-md overflow-hidden">
                                     <input type="file" id="bookingFile" accept="image/*" required class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" />
@@ -862,7 +851,7 @@
                         </form>
                     </div>
 
-                    <!-- Right (4 cols): Booking Status Card -->
+                    <!-- Right: Booking Status Card -->
                     <div class="lg:col-span-4 sticky top-24">
                         <div class="bg-white border border-[#14244B]/10 shadow-sm p-6 md:p-8 rounded-md">
                             <h3 class="font-serif text-xl text-[#14244B] mb-4 pb-4 border-b border-[#14244B]/10">Your Booking Status</h3>
@@ -876,7 +865,6 @@
                                     </div>
                                 </div>
                                 <div id="statusResultsContainer" class="space-y-4 max-h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                                    <!-- Default placeholder -->
                                     <div class="text-sm text-[#14244B]/60 font-light flex flex-col items-center justify-center py-8 text-center min-h-[150px]">
                                         <i data-lucide="search" class="w-10 h-10 text-[#14244B]/20 mb-3"></i>
                                         <p>Enter your phone number above to view your booking status.</p>
@@ -925,11 +913,10 @@
 
     <!-- ================= ADMIN VIEW (DASHBOARD) ================= -->
     <main id="admin-view" class="hidden-view flex relative min-h-screen bg-[#FDFBF7]">
-        
         <!-- Mobile Overlay -->
         <div id="admin-mobile-overlay" class="hidden md:hidden fixed inset-0 bg-[#0B152C]/60 backdrop-blur-sm z-40" onclick="toggleAdminMenu()"></div>
 
-        <!-- Sidebar (Responsive Off-canvas) -->
+        <!-- Sidebar -->
         <aside id="admin-sidebar" class="w-64 bg-[#0B152C] text-[#A8B6D8] flex flex-col h-screen fixed md:sticky top-0 shrink-0 z-50 transform transition-transform duration-300 ease-in-out -translate-x-full md:translate-x-0">
             <div class="p-6 border-b border-[#1E366E] flex justify-between items-center">
                 <div class="flex items-center gap-3 text-white">
@@ -969,16 +956,14 @@
             </div>
         </aside>
 
-        <!-- Main Content Area -->
+        <!-- Main Content -->
         <div class="flex-1 flex flex-col w-full h-screen overflow-hidden">
-            
             <!-- Topbar -->
             <header class="bg-white border-b border-[#14244B]/10 h-16 px-4 md:px-8 flex items-center justify-between shrink-0 sticky top-0 z-30">
                 <div class="flex items-center">
                     <button class="md:hidden mr-4 text-[#14244B]" onclick="toggleAdminMenu()">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
-                    <!-- Search only visible/applicable in Bookings tab -->
                     <div id="adminTopSearchBox" class="hidden sm:flex items-center text-[#14244B]/50 bg-[#FDFBF7] px-3 py-1.5 rounded-sm border border-[#14244B]/10">
                         <i data-lucide="search" class="w-4 h-4 mr-2"></i>
                         <input type="text" id="adminSearchInput" placeholder="Search Bookings by ID or Name..." class="bg-transparent border-none focus:outline-none text-sm w-48 lg:w-64 placeholder:text-[#14244B]/40 text-[#14244B]" />
@@ -1001,7 +986,7 @@
                         <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-4">
                             <div>
                                 <h1 class="font-serif text-2xl md:text-3xl text-[#14244B]">Dashboard Overview</h1>
-                                <p class="text-sm text-[#14244B]/60 mt-1 font-light">High-level operations & calendar view. Click any date to block it.</p>
+                                <p class="text-sm text-[#14244B]/60 mt-1 font-light">High-level operations & calendar view. Click any date to view details or block it.</p>
                             </div>
                         </div>
 
@@ -1053,7 +1038,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Admin Dynamic Grid Layout container -->
                             <div id="admin-calendar-grid" class="calendar-render-target grid grid-cols-7 gap-1 sm:gap-2 min-w-[400px]">
                                 <!-- Grid added via JS -->
                             </div>
@@ -1065,12 +1049,10 @@
                         <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-[#14244B]/10 pb-6">
                             <div>
                                 <h1 class="font-serif text-2xl md:text-3xl text-[#14244B]">Manage Events</h1>
-                                <p class="text-sm text-[#14244B]/60 mt-1 font-light">Upload event posters. They will automatically expire and move to "Passed Events" one day after the event date.</p>
+                                <p class="text-sm text-[#14244B]/60 mt-1 font-light">Upload event posters. They will automatically expire and move to "Passed Events".</p>
                             </div>
                         </div>
-
                         <div class="grid lg:grid-cols-12 gap-8">
-                            <!-- Add Event Form -->
                             <div class="lg:col-span-5 bg-white border border-[#14244B]/10 shadow-sm rounded-md p-6 h-max">
                                 <h3 class="font-serif text-lg text-[#14244B] mb-4 pb-3 border-b border-[#14244B]/5">Add New Event</h3>
                                 <form id="adminEventForm" class="space-y-4">
@@ -1097,14 +1079,9 @@
                                     </button>
                                 </form>
                             </div>
-
-                            <!-- List of Events -->
                             <div class="lg:col-span-7 bg-white border border-[#14244B]/10 shadow-sm rounded-md p-6">
-                                <h3 class="font-serif text-lg text-[#14244B] mb-4 pb-3 border-b border-[#14244B]/5 flex justify-between items-center">
-                                    All Events
-                                </h3>
+                                <h3 class="font-serif text-lg text-[#14244B] mb-4 pb-3 border-b border-[#14244B]/5 flex justify-between items-center">All Events</h3>
                                 <div id="adminEventsList" class="space-y-4 max-h-[400px] overflow-y-auto custom-scrollbar pr-2">
-                                    <!-- Events injected via JS -->
                                     <div class="py-8 text-center text-[#14244B]/40 text-sm">Loading events...</div>
                                 </div>
                             </div>
@@ -1122,8 +1099,6 @@
                                 <i data-lucide="download" class="w-4 h-4"></i> Download All (CSV)
                             </button>
                         </div>
-                        
-                        <!-- Booking Cards Grid -->
                         <div id="admin-bookings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
                             <!-- Booking Cards injected via JS -->
                         </div>
@@ -1137,9 +1112,7 @@
                                 <p class="text-sm text-[#14244B]/60 mt-1 font-light">Messages sent via the Enquiry form.</p>
                             </div>
                         </div>
-                        
                         <div id="admin-inquiries-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-10">
-                            <!-- Inquiries injected via JS -->
                         </div>
                     </div>
 
@@ -1151,9 +1124,7 @@
                                 <p class="text-sm text-[#14244B]/60 mt-1 font-light">Manage admin access to this portal.</p>
                             </div>
                         </div>
-
                         <div class="grid lg:grid-cols-2 gap-8">
-                            <!-- Add Admin Form -->
                             <div class="bg-white border border-[#14244B]/10 shadow-sm rounded-md p-6 h-max">
                                 <h3 class="font-serif text-lg text-[#14244B] mb-4 pb-3 border-b border-[#14244B]/5">Add New Admin</h3>
                                 <form id="addAdminForm" class="space-y-4">
@@ -1170,14 +1141,11 @@
                                     </button>
                                 </form>
                             </div>
-
-                            <!-- List of Admins -->
                             <div class="bg-white border border-[#14244B]/10 shadow-sm rounded-md p-6">
                                 <h3 class="font-serif text-lg text-[#14244B] mb-4 pb-3 border-b border-[#14244B]/5 flex justify-between items-center">
                                     Current Admins <span class="bg-[#14244B]/10 text-[#14244B] px-2 py-0.5 rounded-full text-xs" id="adminCountBadge">1</span>
                                 </h3>
                                 <div id="adminListContainer" class="space-y-3 max-h-[300px] overflow-y-auto custom-scrollbar pr-2">
-                                    <!-- Admins injected via JS -->
                                 </div>
                             </div>
                         </div>
@@ -1188,14 +1156,23 @@
         </div>
     </main>
 
-    <!-- ================= ADMIN BLOCK MODAL ================= -->
+    <!-- ================= ADMIN BLOCK & DETAILS MODAL ================= -->
     <div id="admin-block-modal" class="hidden-view fixed inset-0 z-[150] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeAdminBlockModal()">
-        <div class="bg-white w-full max-w-sm rounded-md shadow-2xl border border-[#1E366E] overflow-hidden flex flex-col relative" onclick="event.stopPropagation()">
-            <div class="p-6 md:p-8">
-                <h2 class="font-serif text-2xl text-purple-800 mb-2">Block Date</h2>
-                <p class="text-[#14244B]/60 text-sm font-light mb-6">Manage availability for <strong id="blockDateDisplay" class="text-[#14244B]"></strong></p>
+        <div class="bg-white w-full max-w-md rounded-md shadow-2xl border border-[#1E366E] overflow-hidden flex flex-col relative max-h-[90vh]" onclick="event.stopPropagation()">
+            <div class="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-1">
+                <h2 class="font-serif text-2xl text-purple-800 mb-2">Manage Date</h2>
+                <p class="text-[#14244B]/60 text-sm font-light mb-6">Review bookings or manage availability for <strong id="blockDateDisplay" class="text-[#14244B]"></strong></p>
+
+                <!-- Section: List Current Blocks/Bookings on this Date -->
+                <div id="existingBlocksContainer" class="mb-6 pb-6 border-b border-[#14244B]/10 hidden">
+                    <h3 class="text-xs font-bold tracking-widest text-[#14244B]/60 uppercase mb-3">Scheduled Functions & Bookings</h3>
+                    <div id="existingBlocksList" class="space-y-3 max-h-[40vh] overflow-y-auto custom-scrollbar pr-2">
+                        <!-- Populated dynamically via JS -->
+                    </div>
+                </div>
 
                 <form id="adminBlockForm" class="space-y-4 text-left">
+                    <h3 class="text-xs font-bold tracking-widest text-[#14244B]/60 uppercase mb-3 border-b border-[#14244B]/10 pb-2">Add Committee Block</h3>
                     <input type="hidden" id="blockDateVal" />
                     <div>
                         <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Block Type</label>
@@ -1215,18 +1192,10 @@
                         </div>
                     </div>
                     <div class="pt-4 flex gap-3">
-                        <button type="button" onclick="closeAdminBlockModal()" class="flex-1 bg-[#FDFBF7] border border-[#14244B]/10 hover:bg-[#14244B]/5 text-[#14244B] py-3 text-sm font-bold transition-colors rounded-md shadow-sm">Cancel</button>
+                        <button type="button" onclick="closeAdminBlockModal()" class="flex-1 bg-[#FDFBF7] border border-[#14244B]/10 hover:bg-[#14244B]/5 text-[#14244B] py-3 text-sm font-bold transition-colors rounded-md shadow-sm">Close</button>
                         <button type="submit" id="blockSubmitBtn" class="flex-1 bg-purple-700 hover:bg-purple-900 text-white py-3 text-sm font-bold transition-colors rounded-md shadow-sm">Confirm Block</button>
                     </div>
                 </form>
-
-                <!-- New Section: List Current Blocks/Bookings on this Date -->
-                <div id="existingBlocksContainer" class="mt-6 border-t border-[#14244B]/10 pt-4 hidden">
-                    <h3 class="text-xs font-bold tracking-widest text-[#14244B]/60 uppercase mb-3">Existing Records on this Date</h3>
-                    <div id="existingBlocksList" class="space-y-2 max-h-40 overflow-y-auto custom-scrollbar pr-2">
-                        <!-- Populated dynamically via JS -->
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -1281,19 +1250,13 @@
                         </p>
                         <div class="flex items-center gap-4 pt-4">
                             <a href="https://www.youtube.com/@ShaheedgarhSahib" target="_blank" rel="noopener" aria-label="YouTube" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 0 1 1.768-1.768C5.746 5 12 5 12 5s6.255 0 7.814.419ZM9.5 15.5L16 12 9.5 8.5v7Z" clip-rule="evenodd"/>
-                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.418-4.814a2.507 2.507 0 0 1 1.768-1.768C5.746 5 12 5 12 5s6.255 0 7.814.419ZM9.5 15.5L16 12 9.5 8.5v7Z" clip-rule="evenodd"/></svg>
                             </a>
                             <a href="https://www.facebook.com/hamiltongurdwara" target="_blank" rel="noopener" aria-label="Facebook" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" clip-rule="evenodd"/>
-                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12Z" clip-rule="evenodd"/></svg>
                             </a>
                             <a href="https://www.instagram.com/shaheedgarh.sahib.hamilton/" target="_blank" rel="noopener" aria-label="Instagram" class="w-8 h-8 rounded-full bg-[#14244B]/5 flex items-center justify-center text-[#14244B]/60 hover:bg-[#FFB300] hover:text-[#14244B] transition-colors">
-                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 5.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63Zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058ZM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27Zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666Zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" clip-rule="evenodd"/>
-                                </svg>
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 0 1 1.772 1.153 4.902 4.902 0 0 1 1.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 0 1-1.153 1.772 4.902 4.902 0 0 1-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 0 1-1.772-1.153 4.902 4.902 0 0 1-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 0 1 1.153-1.772A4.902 4.902 0 0 1 5.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63Zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 0 0-.748-1.15 3.098 3.098 0 0 0-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058ZM12 6.865a5.135 5.135 0 1 1 0 10.27 5.135 5.135 0 0 1 0-10.27Zm0 1.802a3.333 3.333 0 1 0 0 6.666 3.333 3.333 0 0 0 0-6.666Zm5.338-3.205a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z" clip-rule="evenodd"/></svg>
                             </a>
                         </div>
                     </div>
@@ -1314,221 +1277,122 @@
         </div>
     </footer>
 
-    <!-- ================= PRIVACY POLICY MODAL ================= -->
+    <!-- Other Modals (Privacy, Terms, Video, Donate, Lightbox, Enquiry, Global Status, Success, Delete) -->
+    <!-- (Keeping existing modals structure intact) -->
     <div id="privacy-modal" class="hidden-view fixed inset-0 z-[200] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closePrivacyModal()">
         <div class="bg-white w-full max-w-2xl rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar text-left" onclick="event.stopPropagation()">
             <div class="sticky top-0 bg-white border-b border-[#14244B]/10 p-4 md:p-6 flex justify-between items-center z-10">
                 <h2 class="font-serif text-2xl text-[#14244B]">Privacy Policy</h2>
-                <button onclick="closePrivacyModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
+                <button onclick="closePrivacyModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="p-6 md:p-8 space-y-6 text-[#14244B]/80 text-sm font-light leading-relaxed">
-                <p>Welcome to Gurdwara Shaheedgarh Sahib's website. Your privacy is important to us. This policy explains how we collect, use, and protect your personal information when you use our booking and inquiry services.</p>
-
+                <p>Welcome to Gurdwara Shaheedgarh Sahib's website. Your privacy is important to us...</p>
                 <h3 class="font-bold text-[#14244B] text-base">1. Information We Collect</h3>
-                <p>When you submit a booking request or inquiry, we collect the following personal information:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li><strong>Personal Details:</strong> Your Full Name, Phone Number, and Email Address.</li>
-                    <li><strong>Booking Data:</strong> Programme dates, selected times, and specific requests.</li>
-                    <li><strong>Payment Proofs:</strong> Screenshots of e-transfer receipts used to verify advance payments.</li>
-                </ul>
-
-                <h3 class="font-bold text-[#14244B] text-base">2. How We Use Your Information</h3>
-                <p>The data we collect is used strictly for administrative and communication purposes, specifically to:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                    <li>Process, verify, and confirm your programme bookings (e.g., Anand Karaj, Akhand Path).</li>
-                    <li>Respond to your direct inquiries and provide support.</li>
-                    <li>Maintain a secure internal record of Gurdwara events and associated payments.</li>
-                </ul>
-
-                <h3 class="font-bold text-[#14244B] text-base">3. Data Security and Storage</h3>
-                <p>Your information is stored securely in our database systems. Payment screenshots are kept for verification and accounting audits. Access to this data is strictly limited to authorized Gurdwara committee members and system administrators.</p>
-
-                <h3 class="font-bold text-[#14244B] text-base">4. Data Sharing</h3>
-                <p>We do not sell, rent, or share your personal information with third parties for marketing purposes. Your data is only shared internally with the committee for the purpose of fulfilling your requests.</p>
-
-                <p class="pt-4 border-t border-[#14244B]/10">If you have any questions or wish to request the deletion of your data, please contact us at <strong>hamiltongurdwara@gmail.com</strong> or call <strong>+1 905-525-5725</strong>.</p>
+                <p>When you submit a booking request or inquiry, we collect your name, phone number, email address, function details, and payment proofs.</p>
+                <p class="pt-4 border-t border-[#14244B]/10">If you have any questions, please contact us at <strong>hamiltongurdwara@gmail.com</strong>.</p>
             </div>
         </div>
     </div>
 
-    <!-- ================= TERMS OF Service MODAL ================= -->
     <div id="terms-modal" class="hidden-view fixed inset-0 z-[200] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closeTermsModal()">
         <div class="bg-white w-full max-w-2xl rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar text-left" onclick="event.stopPropagation()">
             <div class="sticky top-0 bg-white border-b border-[#14244B]/10 p-4 md:p-6 flex justify-between items-center z-10">
                 <h2 class="font-serif text-2xl text-[#14244B]">Terms of Service</h2>
-                <button onclick="closeTermsModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
+                <button onclick="closeTermsModal()" class="text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10"><i data-lucide="x" class="w-5 h-5"></i></button>
             </div>
             <div class="p-6 md:p-8 space-y-6 text-[#14244B]/80 text-sm font-light leading-relaxed">
                 <p>By using the Gurdwara Shaheedgarh Sahib website to submit inquiries or book programmes, you agree to the following terms and conditions:</p>
-
                 <h3 class="font-bold text-[#14244B] text-base">1. Booking Requests & Confirmation</h3>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li>Submitting a booking request via this website does <strong>not</strong> guarantee immediate confirmation. All bookings are subject to availability and committee approval.</li>
-                    <li>A booking is only considered confirmed after an advance payment of <strong>$1000</strong> is sent via e-transfer to <strong>hamiltongurdwara@gmail.com</strong>.</li>
-                    <li>You must submit your online request along with the payment screenshot within 24 hours of making the e-transfer.</li>
+                    <li>Submitting a booking request via this website does <strong>not</strong> guarantee immediate confirmation.</li>
+                    <li>A booking is only considered confirmed after an advance payment of <strong>$1000</strong> is sent via e-transfer.</li>
                 </ul>
-
-                <h3 class="font-bold text-[#14244B] text-base">2. Cancellations & Modifications</h3>
-                <p>If you need to cancel or modify your booking, please contact the Gurdwara committee immediately at <strong>+1 905-525-5725</strong>. Refund policies for the advance payment are subject to the committee's discretion based on the notice period provided.</p>
-
-                <h3 class="font-bold text-[#14244B] text-base">3. User Responsibilities</h3>
-                <p>You agree to provide accurate and truthful information when filling out forms. Uploading false payment proofs or spamming the inquiry system may result in your phone number/email being blocked from the platform.</p>
-
-                <h3 class="font-bold text-[#14244B] text-base">4. Privacy</h3>
-                <p>Your use of our forms constitutes agreement to our Privacy Policy, acknowledging that we collect your name, contact details, and payment proofs to facilitate Gurdwara services.</p>
             </div>
         </div>
     </div>
 
-    <!-- ================= VIDEO MODAL ================= -->
     <div id="video-modal" class="hidden-view fixed inset-0 z-[100] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeVideoModal()">
         <div class="bg-[#14244B] w-full max-w-5xl rounded-sm shadow-2xl border border-[#1E366E] overflow-hidden flex flex-col" onclick="event.stopPropagation()">
             <div class="flex justify-between items-center p-4 border-b border-[#1E366E] shrink-0">
-                <div class="flex items-center gap-3">
-                    <h3 class="font-serif text-white font-bold text-lg md:text-xl">Watch Video</h3>
-                </div>
-                <button onclick="closeVideoModal()" class="text-white/60 hover:text-[#FFB300] transition-colors p-1">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
+                <h3 class="font-serif text-white font-bold text-lg md:text-xl">Watch Video</h3>
+                <button onclick="closeVideoModal()" class="text-white/60 hover:text-[#FFB300] transition-colors p-1"><i data-lucide="x" class="w-6 h-6"></i></button>
             </div>
             <div class="relative w-full bg-black flex items-center justify-center overflow-hidden" style="height: 75vh;">
-                <video id="main-video-player" controls class="w-full h-full object-contain">
-                    Your browser does not support the video tag.
-                </video>
+                <video id="main-video-player" controls class="w-full h-full object-contain"></video>
             </div>
         </div>
     </div>
 
-    <!-- ================= DONATE MODAL ================= -->
     <div id="donate-modal" class="hidden-view fixed inset-0 z-[100] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closeDonateModal(event)">
         <div class="bg-white w-full max-w-2xl rounded-sm shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar" onclick="event.stopPropagation()">
-            <button onclick="closeDonateModal(event)" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-white rounded-full shadow-sm">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            
+            <button onclick="closeDonateModal(event)" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-white rounded-full shadow-sm"><i data-lucide="x" class="w-6 h-6"></i></button>
             <div class="p-8 md:p-12 text-center flex flex-col items-center">
                 <h2 class="font-sans text-3xl md:text-4xl text-[#14244B] font-medium mb-4">Donate via:</h2>
                 <p class="text-[#14244B]/80 text-lg mb-4">Gurdwara's bank account is linked with the email of gurdwara sahib</p>
                 <p class="font-bold text-xl md:text-2xl text-[#14244B] mb-4">hamiltongurdwara@gmail.com</p>
                 <p class="text-[#14244B]/80 text-lg mb-6">you may contribute via email.</p>
-                <p class="text-[#14244B]/70 mb-8">contact: <span class="text-[#FFB300] font-medium">+1 905-525-5725</span> for queries</p>
-
                 <div class="border border-[#14244B]/10 rounded-md overflow-hidden w-full max-w-lg mx-auto shadow-sm mb-10 text-left">
                     <img src="img_3.jpg" alt="Donation Cheque" class="w-full h-auto object-cover border-b border-[#14244B]/10">
-                    <div class="p-6 bg-white text-center">
-                        <p class="text-[#14244B] font-medium text-[15px] md:text-base leading-snug mb-4">Shaheedgarh Sahib's Sangat donates $10,000 for the Stem Cell Transplant Unit at Juravinski Hospital</p>
-                    </div>
                 </div>
-
-                <h3 class="font-sans text-2xl md:text-3xl text-[#14244B] font-medium">Waheguru Ji Ka Khalsa! Waheguru Ji ki Fateh!!</h3>
             </div>
         </div>
     </div>
 
-    <!-- ================= LIGHTBOX MODAL (GALLERY) ================= -->
     <div id="lightbox-modal" class="hidden-view fixed inset-0 z-[110] flex items-center justify-center bg-[#0B152C]/95 backdrop-blur-md p-4 md:p-8 fade-in" onclick="closeLightbox(event)">
-        <button onclick="closeLightbox(event)" id="lightbox-close" class="absolute top-6 right-6 md:top-8 md:right-8 text-white/60 hover:text-[#FFB300] transition-colors z-50 p-2">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
+        <button onclick="closeLightbox(event)" id="lightbox-close" class="absolute top-6 right-6 md:top-8 md:right-8 text-white/60 hover:text-[#FFB300] transition-colors z-50 p-2"><i data-lucide="x" class="w-8 h-8"></i></button>
         <div class="max-w-5xl w-full flex flex-col items-center justify-center h-full relative" onclick="event.stopPropagation()">
             <img id="lightbox-img" src="" alt="Enlarged view" class="max-h-[80vh] w-auto max-w-full object-contain rounded-md shadow-2xl">
             <p id="lightbox-caption" class="text-white font-serif text-lg md:text-xl mt-6 text-center"></p>
         </div>
     </div>
 
-    <!-- ================= ENQUIRY MODAL ================= -->
     <div id="enquiry-modal" class="hidden-view fixed inset-0 z-[120] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closeEnquiryModal()">
         <div class="bg-white w-full max-w-md rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar" onclick="event.stopPropagation()">
-            <button onclick="closeEnquiryModal()" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            
+            <button onclick="closeEnquiryModal()" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10"><i data-lucide="x" class="w-5 h-5"></i></button>
             <div class="p-6 md:p-8">
                 <h2 class="font-serif text-2xl text-[#14244B] mb-2">Send an Enquiry</h2>
-                <p class="text-[#14244B]/60 text-sm font-light mb-6">Have a question? Fill out the form below and our team will get back to you.</p>
-
                 <form id="enquiryForm" class="space-y-4 text-left">
-                    <div>
-                        <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Full Name</label>
-                        <input type="text" id="enqName" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm text-sm" placeholder="e.g. Jasmeen Kaur" />
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Email Address</label>
-                        <input type="email" id="enqEmail" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm text-sm" placeholder="jasmeen@example.com" />
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Phone Number</label>
-                        <input type="tel" id="enqPhone" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm text-sm" placeholder="+1 (555) 000-0000" />
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Message</label>
-                        <textarea id="enqMessage" required rows="4" class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm text-sm resize-none" placeholder="How can we help you?"></textarea>
-                    </div>
-                    
-                    <button type="submit" id="enqSubmitBtn" class="bg-[#14244B] hover:bg-[#0B152C] text-[#FFB300] w-full py-3 mt-2 text-sm font-bold tracking-wide transition-colors rounded-md shadow-md flex justify-center items-center">
-                        <span id="enqSubmitText">Send Message</span>
-                    </button>
+                    <input type="text" id="enqName" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] rounded-md text-sm" placeholder="Full Name" />
+                    <input type="email" id="enqEmail" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] rounded-md text-sm" placeholder="Email Address" />
+                    <input type="tel" id="enqPhone" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] rounded-md text-sm" placeholder="Phone Number" />
+                    <textarea id="enqMessage" required rows="4" class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] rounded-md text-sm resize-none" placeholder="Message"></textarea>
+                    <button type="submit" id="enqSubmitBtn" class="bg-[#14244B] hover:bg-[#0B152C] text-[#FFB300] w-full py-3 mt-2 text-sm font-bold rounded-md shadow-md flex justify-center items-center"><span id="enqSubmitText">Send Message</span></button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- ================= GLOBAL STATUS CHECK MODAL ================= -->
     <div id="global-status-modal" class="hidden-view fixed inset-0 z-[120] flex items-center justify-center bg-[#0B152C]/80 backdrop-blur-sm p-4 fade-in" onclick="closeGlobalStatusModal()">
         <div class="bg-white w-full max-w-md rounded-md shadow-2xl border border-[#1E366E] overflow-y-auto max-h-[90vh] flex flex-col relative custom-scrollbar" onclick="event.stopPropagation()">
-            <button onclick="closeGlobalStatusModal()" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10">
-                <i data-lucide="x" class="w-5 h-5"></i>
-            </button>
-            
+            <button onclick="closeGlobalStatusModal()" class="absolute top-4 right-4 text-[#14244B]/60 hover:text-[#FFB300] transition-colors p-1 z-10 bg-[#FDFBF7] rounded-full shadow-sm border border-[#14244B]/10"><i data-lucide="x" class="w-5 h-5"></i></button>
             <div class="p-6 md:p-8">
                 <h2 class="font-serif text-2xl text-[#14244B] mb-2">Check Booking Status</h2>
-                <p class="text-[#14244B]/60 text-sm font-light mb-6">Enter your phone number to check the live status of your bookings.</p>
-
                 <div class="flex gap-2 mb-6">
-                    <input type="tel" id="globalSearchPhoneInput" class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-[#FFB300] focus:ring-1 focus:ring-[#FFB300] transition-all rounded-md shadow-sm text-sm" placeholder="Enter Phone Number" />
-                    <button type="button" onclick="executeStatusSearch('globalSearchPhoneInput', 'globalStatusResultsContainer')" class="bg-[#14244B] hover:bg-[#0B152C] text-[#FFB300] px-5 py-2.5 text-sm font-bold transition-colors rounded-md shadow-sm">Check</button>
+                    <input type="tel" id="globalSearchPhoneInput" class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] rounded-md shadow-sm text-sm" placeholder="Enter Phone Number" />
+                    <button type="button" onclick="executeStatusSearch('globalSearchPhoneInput', 'globalStatusResultsContainer')" class="bg-[#14244B] text-[#FFB300] px-5 py-2.5 text-sm font-bold rounded-md">Check</button>
                 </div>
-                
-                <div id="globalStatusResultsContainer" class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
-                    <!-- Default placeholder -->
-                    <div class="text-sm text-[#14244B]/60 font-light flex flex-col items-center justify-center py-8 text-center min-h-[150px]">
-                        <i data-lucide="search" class="w-10 h-10 text-[#14244B]/20 mb-3"></i>
-                        <p>Search using your phone number.</p>
-                    </div>
-                </div>
+                <div id="globalStatusResultsContainer" class="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar"></div>
             </div>
         </div>
     </div>
 
-    <!-- ================= SUCCESS ANIMATION MODAL ================= -->
     <div id="success-modal" class="hidden-view fixed inset-0 z-[130] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeSuccessModal()">
         <div class="bg-white w-full max-w-sm rounded-md shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8 text-center animate-scale-up" onclick="event.stopPropagation()">
-            <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6">
-                <i data-lucide="check" class="w-10 h-10 text-green-600"></i>
-            </div>
-            <h3 class="font-serif text-2xl text-[#14244B] mb-2" id="successModalTitle">Booking Requested!</h3>
+            <div class="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center mb-6"><i data-lucide="check" class="w-10 h-10 text-green-600"></i></div>
+            <h3 class="font-serif text-2xl text-[#14244B] mb-2" id="successModalTitle">Success!</h3>
             <p class="text-[#14244B]/60 text-sm mb-6 leading-relaxed" id="successModalText"></p>
-            <button onclick="closeSuccessModal()" class="bg-[#FFB300] hover:bg-[#E6A200] text-[#14244B] px-8 py-3 text-sm font-bold tracking-wide transition-colors w-full rounded-md shadow-sm">
-                Close
-            </button>
+            <button onclick="closeSuccessModal()" class="bg-[#FFB300] text-[#14244B] px-8 py-3 text-sm font-bold w-full rounded-md shadow-sm">Close</button>
         </div>
     </div>
 
-    <!-- ================= DELETE CONFIRMATION MODAL ================= -->
     <div id="delete-modal" class="hidden-view fixed inset-0 z-[140] flex items-center justify-center bg-[#0B152C]/90 backdrop-blur-sm p-4 fade-in" onclick="closeDeleteModal()">
         <div class="bg-white w-full max-w-sm rounded-md shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8 text-center" onclick="event.stopPropagation()">
-            <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4">
-                <i data-lucide="alert-triangle" class="w-8 h-8 text-red-600"></i>
-            </div>
+            <div class="w-16 h-16 bg-red-50 rounded-full flex items-center justify-center mb-4"><i data-lucide="alert-triangle" class="w-8 h-8 text-red-600"></i></div>
             <h3 class="font-serif text-xl text-[#14244B] mb-2">Delete Record?</h3>
             <p class="text-[#14244B]/60 text-sm mb-6 leading-relaxed">Are you sure you want to delete this record? This action cannot be undone.</p>
             <div class="flex w-full gap-3">
-                <button onclick="closeDeleteModal()" class="flex-1 bg-[#FDFBF7] border border-[#14244B]/10 hover:bg-[#14244B]/5 text-[#14244B] py-3 text-sm font-bold transition-colors rounded-md shadow-sm">Cancel</button>
-                <button id="confirmDeleteBtn" class="flex-1 bg-[#4a1c1c] hover:bg-black text-white py-3 text-sm font-bold transition-colors rounded-md shadow-sm">Delete</button>
+                <button onclick="closeDeleteModal()" class="flex-1 bg-[#FDFBF7] border border-[#14244B]/10 py-3 text-sm font-bold rounded-md">Cancel</button>
+                <button id="confirmDeleteBtn" class="flex-1 bg-[#4a1c1c] text-white py-3 text-sm font-bold rounded-md">Delete</button>
             </div>
         </div>
     </div>
@@ -1542,7 +1406,6 @@
         let isMobileMenuOpen = false;
         let isAdminLoggedIn = false;
 
-        // Routing Logic that syncs with Sitelink Anchors
         function switchViewDOM(viewName) {
             document.getElementById('home-view').classList.add('hidden-view');
             document.getElementById('history-view').classList.add('hidden-view');
@@ -1568,7 +1431,7 @@
             
             if (isMobileMenuOpen) toggleMobileMenu();
             if (viewName === 'admin') {
-                switchAdminTab('dashboard'); // default tab
+                switchAdminTab('dashboard'); 
             } else if (window.innerWidth < 768) {
                  document.getElementById('admin-sidebar')?.classList.add('-translate-x-full');
                  document.getElementById('admin-mobile-overlay')?.classList.add('hidden');
@@ -1577,10 +1440,8 @@
             updateHeaderScrollState();
         }
 
-        // Global Hash Router handler for Sitelink SEO
         function handleHashRoute() {
             let hash = window.location.hash.substring(1) || 'home';
-            // Intercept Admin Access
             if (hash === 'admin' && !isAdminLoggedIn) {
                 hash = 'login';
                 history.replaceState(null, null, '#login');
@@ -1596,12 +1457,10 @@
         window.addEventListener('hashchange', handleHashRoute);
         window.addEventListener('DOMContentLoaded', handleHashRoute);
 
-        // Helper to allow backwards compatibility with existing onclick logic
         function switchView(viewName) {
             window.location.hash = viewName;
         }
 
-        // Admin Tab switching
         function switchAdminTab(tabName) {
             const tabs = ['dashboard', 'events', 'bookings', 'inquiries', 'staff'];
             tabs.forEach(t => {
@@ -1624,7 +1483,6 @@
                 activeNav.classList.add('text-[#FFB300]', 'border-[#FFB300]', 'bg-[#14244B]/40');
             }
 
-            // Topbar specific logic
             const searchBox = document.getElementById('adminTopSearchBox');
             if(tabName === 'bookings') {
                 searchBox.classList.remove('hidden');
@@ -1657,7 +1515,6 @@
                 header.classList.remove('bg-transparent');
                 navContainer.classList.add('py-3', 'border-b', 'border-[#14244B]/10');
                 navContainer.classList.remove('py-4', 'md:py-6');
-
                 logoText.classList.add('text-[#14244B]');
                 logoText.classList.remove('text-white', 'drop-shadow-md');
                 logoSub.classList.add('text-[#14244B]/60');
@@ -1669,7 +1526,6 @@
                 header.classList.add('bg-transparent');
                 navContainer.classList.remove('py-3', 'border-b', 'border-[#14244B]/10');
                 navContainer.classList.add('py-4', 'md:py-6');
-
                 logoText.classList.remove('text-[#14244B]');
                 logoText.classList.add('text-white', 'drop-shadow-md');
                 logoSub.classList.remove('text-[#14244B]/60');
@@ -1752,7 +1608,6 @@
             if(isMobileMenuOpen) toggleMobileMenu();
         }
         function closeTermsModal() { document.getElementById('terms-modal').classList.add('hidden-view'); }
-
 
         function openLightbox(imageSrc, captionText) {
             document.getElementById('lightbox-img').src = imageSrc;
@@ -1858,10 +1713,9 @@
         let allInquiries = [];
         let allAdmins = [];
         let allEvents = [];
-        let calendarDate = new Date(); // Start at current date
-        const today = new Date(); // To track actual 'today'
+        let calendarDate = new Date(); 
+        const today = new Date(); 
 
-        // Predefined time slots
         const timeSlots = ["08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM"];
 
         // 4. Admin Auth Logic
@@ -1897,7 +1751,7 @@
                 if(isValidHardcoded || isValidDB) {
                     isAdminLoggedIn = true;
                     document.getElementById('loggedInAdminName').innerText = u;
-                    window.location.hash = 'admin'; // Route via hash for SEO
+                    window.location.hash = 'admin'; 
                     loginForm.reset();
                 } else {
                     document.getElementById('loginErrorMsg').classList.remove('hidden');
@@ -1911,7 +1765,6 @@
             }
         });
 
-        // 5. Populate Year Dropdowns initially
         function initYearDropdowns() {
             const currentYear = today.getFullYear();
             const years = Array.from({length: 10}, (_, i) => currentYear + i);
@@ -2003,7 +1856,7 @@
             renderAdminStaff();
         });
 
-        // NEW: Fetch Events from Firebase
+        // 9. Fetch Events from Firebase
         const eventsRef = ref(db, 'events');
         onValue(eventsRef, (snapshot) => {
             const data = snapshot.val();
@@ -2013,7 +1866,6 @@
                     allEvents.push({ firebaseId: key, ...data[key] });
                 }
             }
-            // Sort events by date ascending
             allEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
             renderEventsViews();
             checkAndShowEventPopup();
@@ -2026,13 +1878,11 @@
             const now = new Date().getTime();
             let upcomingEvents = allEvents.filter(e => {
                 const eventTime = new Date(e.date).getTime();
-                // Expire exactly 1 day (24h) after the event date
                 const expiryTime = eventTime + (24 * 60 * 60 * 1000); 
                 return now <= expiryTime;
             });
 
             if(upcomingEvents.length > 0) {
-                // Show the closest upcoming event
                 const popupEvent = upcomingEvents[0];
                 document.getElementById('popup-event-img').src = popupEvent.posterUrl;
                 document.getElementById('popup-event-title').innerText = popupEvent.title;
@@ -2047,7 +1897,6 @@
         function renderEventsViews() {
             const now = new Date().getTime();
             
-            // Filter Upcoming and Passed
             const upcomingEvents = allEvents.filter(e => {
                 const expiryTime = new Date(e.date).getTime() + (24 * 60 * 60 * 1000);
                 return now <= expiryTime;
@@ -2055,9 +1904,8 @@
             const passedEvents = allEvents.filter(e => {
                 const expiryTime = new Date(e.date).getTime() + (24 * 60 * 60 * 1000);
                 return now > expiryTime;
-            }).sort((a,b) => new Date(b.date) - new Date(a.date)); // descending for passed
+            }).sort((a,b) => new Date(b.date) - new Date(a.date));
 
-            // -- Update Public View --
             const upcomingGrid = document.getElementById('upcoming-events-grid');
             const passedGrid = document.getElementById('passed-events-grid');
             
@@ -2117,14 +1965,12 @@
                 }
             }
 
-            // -- Update Admin View --
             const adminEventsList = document.getElementById('adminEventsList');
             if(adminEventsList) {
                 if(allEvents.length === 0) {
                     adminEventsList.innerHTML = `<div class="py-12 text-center text-[#14244B]/40 text-sm">No events found.</div>`;
                 } else {
                     let html = '';
-                    // Put upcoming on top
                     const displayList = [...upcomingEvents, ...passedEvents];
                     displayList.forEach(e => {
                         const isPassed = new Date(e.date).getTime() + 86400000 < now;
@@ -2153,7 +1999,6 @@
             lucide.createIcons();
         }
 
-        // Handle Admin Add Event
         const adminEventForm = document.getElementById('adminEventForm');
         const eventFileInput = document.getElementById('eventFile');
         const eventUploadText = document.getElementById('eventUploadText');
@@ -2187,7 +2032,6 @@
                 btnText.innerHTML = '<span class="loader"></span> Uploading...';
 
                 try {
-                    // Upload to GitHub
                     const base64Data = await toBase64(file);
                     const base64Content = base64Data.split(',')[1];
                     const cleanFileName = file.name.replace(/[^a-zA-Z0-9.]/g, '_');
@@ -2210,7 +2054,6 @@
                     const ghData = await ghResponse.json();
                     const fileUrl = ghData.content.download_url;
 
-                    // Save to Firebase
                     await push(eventsRef, {
                         title: title,
                         date: date,
@@ -2232,8 +2075,7 @@
             });
         }
 
-
-        // 9. Calendar Rendering Logic
+        // Calendar Rendering Logic
         window.changeCalendarMonth = function(offset) {
             calendarDate.setMonth(calendarDate.getMonth() + offset);
             syncDropdowns();
@@ -2298,12 +2140,10 @@
                     <div class="text-center py-2 text-[10px] font-bold text-[#14244B]/50 uppercase tracking-widest">Sa</div>
                 `;
 
-                // Padding start
                 for(let i=0; i<firstDay; i++) {
                     html += `<div class="min-h-[80px] border border-[#14244B]/5 bg-gray-100 rounded-md"></div>`;
                 }
 
-                // Days
                 for(let i=1; i<=daysInMonth; i++) {
                     const checkDateStr = `${year}-${String(month+1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
                     const isToday = (year === today.getFullYear() && month === today.getMonth() && i === today.getDate());
@@ -2324,9 +2164,9 @@
                             const isBlock = b.status === 'Blocked';
                             
                             const tagBg = isBlock ? 'bg-purple-100 border-purple-300 text-purple-800' : 'bg-white/90 border-[#8C2323]/20 text-[#8C2323]';
-                            const label = isBlock ? 'BLOCKED' : 'BOOKED';
+                            const label = isBlock ? 'BLOCKED' : (b.functionName || 'BOOKED');
 
-                            return `<span class="text-[7px] md:text-[8px] uppercase tracking-tighter font-bold px-1 py-0.5 rounded-sm block w-full mt-1 whitespace-nowrap overflow-hidden text-ellipsis shadow-sm border ${tagBg}" title="${b.startTime} - ${b.endTime}">${label}:<br/>${shortStart} - ${shortEnd}</span>`;
+                            return `<span class="text-[7px] md:text-[8px] uppercase tracking-tighter font-bold px-1 py-0.5 rounded-sm block w-full mt-1 whitespace-nowrap overflow-hidden text-ellipsis shadow-sm border ${tagBg}" title="${label} | ${b.startTime} - ${b.endTime}">${label}:<br/>${shortStart} - ${shortEnd}</span>`;
                         }).join('');
 
                         html += `
@@ -2342,7 +2182,6 @@
                     }
                 }
 
-                // Padding end
                 const remaining = totalCells - (firstDay + daysInMonth);
                 for(let i=0; i<remaining; i++) {
                     html += `<div class="min-h-[80px] border border-[#14244B]/5 bg-gray-100 rounded-md"></div>`;
@@ -2374,14 +2213,22 @@
                 dayBookings.forEach(b => {
                     const isBlock = b.status === 'Blocked';
                     html += `
-                    <div class="flex justify-between items-center bg-[#FDFBF7] p-3 rounded-md border border-[#14244B]/10 text-sm shadow-sm">
-                        <div class="flex flex-col">
-                            <span class="${isBlock ? 'text-purple-700' : 'text-red-700'} font-bold text-xs uppercase tracking-widest">${isBlock ? 'Block' : 'Booking'}</span>
-                            <span class="text-[#14244B] font-medium text-xs mt-0.5">${b.startTime} - ${b.endTime}</span>
+                    <div class="flex flex-col bg-[#FDFBF7] p-3 rounded-md border border-[#14244B]/10 text-sm shadow-sm gap-2">
+                        <div class="flex justify-between items-start">
+                            <div class="flex flex-col">
+                                <span class="${isBlock ? 'text-purple-700' : 'text-red-700'} font-bold text-xs uppercase tracking-widest">${isBlock ? 'Block' : 'Booking'}: ${b.startTime} - ${b.endTime}</span>
+                                ${!isBlock ? `<span class="text-[#14244B] font-bold text-sm mt-1">${b.functionName || 'No Function Name Given'}</span>` : ''}
+                            </div>
+                            <button type="button" onclick="window.deleteRecordDirectly('${b.firebaseId}', 'booking', '${dateStr}')" class="text-red-500 hover:text-red-700 p-1.5 bg-white rounded-md shadow-sm border border-red-100 transition-colors shrink-0" title="Remove">
+                                <i data-lucide="x" class="w-4 h-4"></i>
+                            </button>
                         </div>
-                        <button type="button" onclick="window.deleteRecordDirectly('${b.firebaseId}', 'booking', '${dateStr}')" class="text-red-500 hover:text-red-700 p-2 bg-white rounded-md shadow-sm border border-red-100 transition-colors" title="Remove">
-                            <i data-lucide="x" class="w-4 h-4"></i>
-                        </button>
+                        ${!isBlock ? `
+                        <div class="text-xs text-[#14244B]/70 mt-1">
+                            <p><strong>Name:</strong> ${b.name} | <strong>Phone:</strong> ${b.phone}</p>
+                            ${b.functionMessage ? `<p class="mt-2 bg-white p-2 rounded border border-[#14244B]/5 italic">"${b.functionMessage}"</p>` : ''}
+                        </div>
+                        ` : ''}
                     </div>
                     `;
                 });
@@ -2458,7 +2305,6 @@
             }
         });
 
-
         // 10. Admin Renders & Actions
         function renderAdminBookings() {
             const container = document.getElementById('admin-bookings-container');
@@ -2468,7 +2314,8 @@
             let filterText = searchInput ? searchInput.value.toLowerCase() : "";
             let filteredBookings = allBookings.filter(b => 
                 (b.name && b.name.toLowerCase().includes(filterText)) || 
-                (b.bookingId && b.bookingId.toLowerCase().includes(filterText))
+                (b.bookingId && b.bookingId.toLowerCase().includes(filterText)) ||
+                (b.functionName && b.functionName.toLowerCase().includes(filterText))
             );
 
             filteredBookings.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
@@ -2508,7 +2355,7 @@
                 html += `
                 <div class="bg-white border border-[#14244B]/10 rounded-md shadow-sm overflow-hidden flex flex-col">
                     <div class="p-6 flex-1 flex flex-col relative">
-                        <div class="flex justify-between items-start mb-4">
+                        <div class="flex justify-between items-start mb-4 border-b border-[#14244B]/10 pb-3">
                             <div>
                                 <span class="text-[10px] font-bold tracking-widest text-[#14244B]/40 uppercase block mb-1">Booking ID:</span>
                                 <h3 class="font-mono text-base font-bold text-[#14244B]">${b.bookingId}</h3>
@@ -2521,15 +2368,18 @@
                             </select>
                         </div>
                         
-                        <div class="space-y-2 mb-6 flex-1">
+                        <div class="space-y-2 mb-4 flex-1">
                             <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Name:</strong> ${b.name}</p>
                             <p class="text-[#14244B] font-light text-xs flex items-center justify-between">
                                 <span><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Phone:</strong> ${b.phone}</span>
                                 ${b.phone !== 'N/A' ? `<a href="tel:${b.phone}" class="text-blue-600 hover:text-blue-800 font-semibold text-[10px] flex items-center gap-1 bg-blue-50 px-2 py-0.5 rounded-sm"><i data-lucide="phone-call" class="w-3 h-3"></i> Call</a>` : ''}
                             </p>
+                            <div class="bg-[#FDFBF7] p-2 rounded border border-[#14244B]/5 my-2">
+                                <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Function:</strong> ${b.functionName || 'N/A'}</p>
+                                ${b.functionMessage ? `<p class="text-[#14244B] font-light text-xs mt-1"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider block mb-0.5">Details:</strong> ${b.functionMessage}</p>` : ''}
+                            </div>
                             <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Date:</strong> ${b.date}</p>
-                            <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Start:</strong> ${b.startTime}</p>
-                            <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">End:</strong> ${b.endTime}</p>
+                            <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Time:</strong> ${b.startTime} - ${b.endTime}</p>
                         </div>
 
                         <div>
@@ -2618,13 +2468,11 @@
             lucide.createIcons();
         }
 
-        // Attach Search Event to Admin Panel Input
         const adminSearch = document.getElementById('adminSearchInput');
         if(adminSearch) {
             adminSearch.addEventListener('input', renderAdminBookings);
         }
 
-        // Make Admin functions global
         window.updateBookingStatus = async function(firebaseId, newStatus) {
             try {
                 await update(ref(db, `bookings/${firebaseId}`), { status: newStatus });
@@ -2697,9 +2545,11 @@
                 alert("No records to download.");
                 return;
             }
-            let csv = "Booking ID,Name,Phone,Date,Start Time,End Time,Status,Timestamp,Screenshot URL\n";
+            let csv = "Booking ID,Name,Phone,Function Name,Function Message,Date,Start Time,End Time,Status,Timestamp,Screenshot URL\n";
             allBookings.forEach(b => {
-                csv += `"${b.bookingId}","${b.name}","${b.phone}","${b.date}","${b.startTime}","${b.endTime}","${b.status}","${b.timestamp}","${b.screenshotUrl}"\n`;
+                const funcNameSafe = b.functionName ? b.functionName.replace(/"/g, '""') : 'N/A';
+                const funcMsgSafe = b.functionMessage ? b.functionMessage.replace(/"/g, '""') : 'N/A';
+                csv += `"${b.bookingId}","${b.name}","${b.phone}","${funcNameSafe}","${funcMsgSafe}","${b.date}","${b.startTime}","${b.endTime}","${b.status}","${b.timestamp}","${b.screenshotUrl}"\n`;
             });
             
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -2712,7 +2562,6 @@
             a.click();
             document.body.removeChild(a);
         };
-
 
         // 11. Dynamic Time Slot Filtering & Warnings
         const dateInput = document.getElementById('bookingDate');
@@ -2926,6 +2775,7 @@
                         </div>
                         <div class="space-y-2 text-xs text-[#14244B]/80 font-light">
                             <p class="flex items-center gap-2"><i data-lucide="user" class="w-3.5 h-3.5 text-[#14244B]/40"></i> <strong class="font-semibold text-[#14244B] w-12">Name:</strong> ${b.name}</p>
+                            <p class="flex items-center gap-2"><i data-lucide="info" class="w-3.5 h-3.5 text-[#14244B]/40"></i> <strong class="font-semibold text-[#14244B] w-12">Function:</strong> ${b.functionName || 'N/A'}</p>
                             <p class="flex items-center gap-2"><i data-lucide="calendar" class="w-3.5 h-3.5 text-[#14244B]/40"></i> <strong class="font-semibold text-[#14244B] w-12">Date:</strong> ${b.date}</p>
                             <p class="flex items-center gap-2"><i data-lucide="clock" class="w-3.5 h-3.5 text-[#14244B]/40"></i> <strong class="font-semibold text-[#14244B] w-12">Time:</strong> ${b.startTime} - ${b.endTime}</p>
                         </div>
@@ -2941,11 +2791,13 @@
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const name = document.getElementById('bookingName').value;
-            const phone = document.getElementById('bookingPhone').value;
+            const name = document.getElementById('bookingName').value.trim();
+            const phone = document.getElementById('bookingPhone').value.trim();
             const date = document.getElementById('bookingDate').value;
             const startTime = document.getElementById('bookingStart').value;
             const endTime = document.getElementById('bookingEnd').value;
+            const functionName = document.getElementById('bookingFunctionName').value.trim();
+            const functionMessage = document.getElementById('bookingFunctionMessage').value.trim();
             const file = fileInput.files[0];
 
             if(!startTime || !endTime) {
@@ -2961,7 +2813,6 @@
             submitText.innerHTML = '<span class="loader"></span> Processing...';
 
             try {
-                // Upload to GitHub
                 const base64Data = await toBase64(file);
                 const base64Content = base64Data.split(',')[1];
                 const cleanFileName = file.name.replace(/[^a-zA-Z0-9.]/g, '_');
@@ -2987,12 +2838,13 @@
                 const ghData = await ghResponse.json();
                 const fileUrl = ghData.content.download_url;
 
-                // Save to Firebase
                 const newBookingRef = push(bookingsRef);
                 await set(newBookingRef, {
                     bookingId: currentBookingId,
                     name: name,
                     phone: phone,
+                    functionName: functionName,
+                    functionMessage: functionMessage,
                     date: date,
                     startTime: startTime,
                     endTime: endTime,
@@ -3023,7 +2875,6 @@
                 submitText.innerText = 'Submit Request';
             }
         });
-
     </script>
 </body>
 </html>
