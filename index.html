@@ -964,9 +964,10 @@
                     <button class="md:hidden mr-4 text-[#14244B]" onclick="toggleAdminMenu()">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
+                    <!-- UPDATED: Search Input Placeholder -->
                     <div id="adminTopSearchBox" class="hidden sm:flex items-center text-[#14244B]/50 bg-[#FDFBF7] px-3 py-1.5 rounded-sm border border-[#14244B]/10">
                         <i data-lucide="search" class="w-4 h-4 mr-2"></i>
-                        <input type="text" id="adminSearchInput" placeholder="Search Bookings by ID or Name..." class="bg-transparent border-none focus:outline-none text-sm w-48 lg:w-64 placeholder:text-[#14244B]/40 text-[#14244B]" />
+                        <input type="text" id="adminSearchInput" placeholder="Search by ID, Name, or Phone..." class="bg-transparent border-none focus:outline-none text-sm w-48 lg:w-64 placeholder:text-[#14244B]/40 text-[#14244B]" />
                     </div>
                 </div>
                 <div class="flex items-center gap-3 md:gap-4">
@@ -1177,7 +1178,7 @@
                     <div>
                         <label class="block text-[10px] font-bold tracking-widest text-[#14244B]/60 uppercase mb-1">Block Type</label>
                         <select id="blockType" onchange="toggleBlockTimes()" required class="w-full bg-[#FDFBF7] border border-[#14244B]/20 px-3 py-2.5 text-[#14244B] focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-all rounded-md shadow-sm text-sm">
-                            <option value="full">Full Day (8 AM - 5 PM)</option>
+                            <option value="full">Full Day</option>
                             <option value="partial">Partial / Specific Time</option>
                         </select>
                     </div>
@@ -1716,7 +1717,17 @@
         let calendarDate = new Date(); 
         const today = new Date(); 
 
-        const timeSlots = ["08:00 AM", "08:30 AM", "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM"];
+        // UPDATED: 24-Hour Time Slots
+        const timeSlots = [
+            "12:00 AM", "12:30 AM", "01:00 AM", "01:30 AM", "02:00 AM", "02:30 AM", 
+            "03:00 AM", "03:30 AM", "04:00 AM", "04:30 AM", "05:00 AM", "05:30 AM", 
+            "06:00 AM", "06:30 AM", "07:00 AM", "07:30 AM", "08:00 AM", "08:30 AM", 
+            "09:00 AM", "09:30 AM", "10:00 AM", "10:30 AM", "11:00 AM", "11:30 AM", 
+            "12:00 PM", "12:30 PM", "01:00 PM", "01:30 PM", "02:00 PM", "02:30 PM", 
+            "03:00 PM", "03:30 PM", "04:00 PM", "04:30 PM", "05:00 PM", "05:30 PM", 
+            "06:00 PM", "06:30 PM", "07:00 PM", "07:30 PM", "08:00 PM", "08:30 PM", 
+            "09:00 PM", "09:30 PM", "10:00 PM", "10:30 PM", "11:00 PM", "11:30 PM"
+        ];
 
         // 4. Admin Auth Logic
         const loginForm = document.getElementById('adminLoginForm');
@@ -2262,8 +2273,8 @@
             e.preventDefault();
             const date = document.getElementById('blockDateVal').value;
             const type = document.getElementById('blockType').value;
-            let start = "08:00 AM";
-            let end = "05:00 PM";
+            let start = "12:00 AM";
+            let end = "11:30 PM";
             
             if (type === 'partial') {
                 start = document.getElementById('blockStart').value;
@@ -2315,18 +2326,31 @@
             let filteredBookings = allBookings.filter(b => 
                 (b.name && b.name.toLowerCase().includes(filterText)) || 
                 (b.bookingId && b.bookingId.toLowerCase().includes(filterText)) ||
-                (b.functionName && b.functionName.toLowerCase().includes(filterText))
+                (b.functionName && b.functionName.toLowerCase().includes(filterText)) ||
+                (b.phone && b.phone.toLowerCase().includes(filterText)) // Added Phone Search
             );
 
-            filteredBookings.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
+            // Sort helper: By Date (ascending), then by Time (ascending)
+            const sortByDateAndTime = (a, b) => {
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                if (dateA.getTime() !== dateB.getTime()) {
+                    return dateA - dateB;
+                }
+                return timeToFloat(a.startTime) - timeToFloat(b.startTime);
+            };
+
+            // Separate New Requests from the Master List
+            let newRequests = filteredBookings.filter(b => b.status === 'Pending').sort(sortByDateAndTime);
+            let masterList = filteredBookings.filter(b => b.status !== 'Pending').sort(sortByDateAndTime);
 
             if (filteredBookings.length === 0) {
                 container.innerHTML = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No records found.</div>`;
                 return;
             }
 
-            let html = "";
-            filteredBookings.forEach(b => {
+            // Reusable HTML generator for a Booking Card
+            const buildCard = (b) => {
                 const statusColor = b.status === 'Confirmed' ? 'text-green-700 bg-green-50' : 
                                     b.status === 'Rejected' ? 'text-red-700 bg-red-50' : 
                                     b.status === 'Blocked' ? 'text-purple-700 bg-purple-50' :
@@ -2352,7 +2376,7 @@
                     `;
                 }
 
-                html += `
+                return `
                 <div class="bg-white border border-[#14244B]/10 rounded-md shadow-sm overflow-hidden flex flex-col">
                     <div class="p-6 flex-1 flex flex-col relative">
                         <div class="flex justify-between items-start mb-4 border-b border-[#14244B]/10 pb-3">
@@ -2378,7 +2402,7 @@
                                 <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Function:</strong> ${b.functionName || 'N/A'}</p>
                                 ${b.functionMessage ? `<p class="text-[#14244B] font-light text-xs mt-1"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider block mb-0.5">Details:</strong> ${b.functionMessage}</p>` : ''}
                             </div>
-                            <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Date:</strong> ${b.date}</p>
+                            <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Date:</strong> <span class="bg-[#FFB300]/20 px-1 py-0.5 rounded">${b.date}</span></p>
                             <p class="text-[#14244B] font-light text-xs"><strong class="font-bold mr-1 text-[10px] uppercase text-[#14244B]/60 tracking-wider">Time:</strong> ${b.startTime} - ${b.endTime}</p>
                         </div>
 
@@ -2391,7 +2415,20 @@
                     </button>
                 </div>
                 `;
-            });
+            };
+
+            let html = "";
+
+            if (newRequests.length > 0) {
+                html += `<div class="col-span-full mb-2"><h2 class="font-serif text-xl text-[#FFB300] border-b border-[#14244B]/10 pb-2">New Requests (Pending)</h2></div>`;
+                newRequests.forEach(b => html += buildCard(b));
+            }
+
+            if (masterList.length > 0) {
+                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-[#14244B] border-b border-[#14244B]/10 pb-2">Master List (Confirmed / Rejected / Blocked)</h2></div>`;
+                masterList.forEach(b => html += buildCard(b));
+            }
+
             container.innerHTML = html;
             lucide.createIcons();
         }
