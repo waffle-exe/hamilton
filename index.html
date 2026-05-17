@@ -186,12 +186,13 @@
                     </a>
                     
                     <!-- Desktop Links -->
-                    <nav class="hidden lg:flex items-center space-x-8">
+                    <nav class="hidden lg:flex items-center space-x-4 xl:space-x-8">
                         <a href="#home" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Home</a>
                         <a href="#history" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">History</a>
                         <a href="Anand_karaj.pdf" target="_blank" rel="noopener" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Anand Karaj</a>
                         <a href="#events" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Events</a>
                         <a href="#gallery" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Gallery</a>
+                        <a href="https://www.youtube.com/@ArashpreetSinghRhythmm" target="_blank" rel="noopener" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm flex items-center gap-1">Learn Kirtan</a>
                         <a href="#booking" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Booking</a>
                         <button onclick="openGlobalStatusModal()" class="nav-link text-sm font-medium hover:text-[#FFB300] transition-colors text-white drop-shadow-sm">Check Status</button>
                     </nav>
@@ -222,6 +223,7 @@
                 <a href="Anand_karaj.pdf" target="_blank" class="block text-[#14244B]/80 hover:text-[#FFB300] font-medium py-4 border-b border-[#14244B]/5">Anand Karaj</a>
                 <a href="#events" class="block text-[#14244B]/80 hover:text-[#FFB300] font-medium py-4 border-b border-[#14244B]/5">Events</a>
                 <a href="#gallery" class="block text-[#14244B]/80 hover:text-[#FFB300] font-medium py-4 border-b border-[#14244B]/5">Gallery</a>
+                <a href="https://www.youtube.com/@ArashpreetSinghRhythmm" target="_blank" rel="noopener" class="block text-[#14244B]/80 hover:text-[#FFB300] font-medium py-4 border-b border-[#14244B]/5 flex justify-between items-center">Learn Kirtan <i data-lucide="external-link" class="w-4 h-4"></i></a>
                 <a href="#booking" class="text-[#FFB300] font-bold py-4 border-b border-[#14244B]/5 flex justify-between items-center">
                     Booking <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </a>
@@ -2364,14 +2366,47 @@
                 return timeToFloat(a.startTime) - timeToFloat(b.startTime);
             };
 
-            // Separate New Requests from the Master List
-            let newRequests = filteredBookings.filter(b => b.status === 'Pending').sort(sortByDateAndTime);
-            let masterList = filteredBookings.filter(b => b.status !== 'Pending').sort(sortByDateAndTime);
-
             if (filteredBookings.length === 0) {
                 container.innerHTML = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No records found.</div>`;
                 return;
             }
+
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            const pendingBookings = [];
+            const confirmedBookings = [];
+            const passedBookings = [];
+            const rejectedBookings = [];
+
+            filteredBookings.forEach(b => {
+                let bDate = new Date(0);
+                if(b.date) {
+                    const [y, m, d] = b.date.split('-');
+                    bDate = new Date(y, m - 1, d);
+                }
+                bDate.setHours(0, 0, 0, 0);
+                
+                const isPassed = bDate < today;
+
+                if (isPassed) {
+                    passedBookings.push(b);
+                } else if (b.status === 'Pending') {
+                    pendingBookings.push(b);
+                } else if (b.status === 'Confirmed' || b.status === 'Blocked') {
+                    confirmedBookings.push(b);
+                } else if (b.status === 'Rejected') {
+                    rejectedBookings.push(b);
+                } else {
+                    pendingBookings.push(b);
+                }
+            });
+
+            // Apply chronological sorting to each group
+            pendingBookings.sort(sortByDateAndTime);
+            confirmedBookings.sort(sortByDateAndTime);
+            passedBookings.sort((a,b) => sortByDateAndTime(b,a)); // Show most recently passed first
+            rejectedBookings.sort(sortByDateAndTime);
 
             // Reusable HTML generator for a Booking Card
             const buildCard = (b) => {
@@ -2443,14 +2478,28 @@
 
             let html = "";
 
-            if (newRequests.length > 0) {
-                html += `<div class="col-span-full mb-2"><h2 class="font-serif text-xl text-[#FFB300] border-b border-[#14244B]/10 pb-2">New Requests (Pending)</h2></div>`;
-                newRequests.forEach(b => html += buildCard(b));
+            // Group 1: New / Pending
+            if (pendingBookings.length > 0) {
+                html += `<div class="col-span-full mb-2"><h2 class="font-serif text-xl text-[#FFB300] border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="clock" class="w-5 h-5"></i> New / Pending Bookings</h2></div>`;
+                pendingBookings.forEach(b => html += buildCard(b));
             }
 
-            if (masterList.length > 0) {
-                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-[#14244B] border-b border-[#14244B]/10 pb-2">Master List (Confirmed / Rejected / Blocked)</h2></div>`;
-                masterList.forEach(b => html += buildCard(b));
+            // Group 2: Confirmed Upcoming
+            if (confirmedBookings.length > 0) {
+                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-green-700 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="calendar-check" class="w-5 h-5"></i> Confirmed Upcoming Bookings & Blocks</h2></div>`;
+                confirmedBookings.forEach(b => html += buildCard(b));
+            }
+
+            // Group 3: Passed
+            if (passedBookings.length > 0) {
+                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-[#14244B]/50 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="history" class="w-5 h-5"></i> Passed Bookings</h2></div>`;
+                passedBookings.forEach(b => html += buildCard(b));
+            }
+
+            // Group 4: Rejected
+            if (rejectedBookings.length > 0) {
+                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-red-700 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5"></i> Rejected Bookings</h2></div>`;
+                rejectedBookings.forEach(b => html += buildCard(b));
             }
 
             container.innerHTML = html;
