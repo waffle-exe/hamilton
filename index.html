@@ -1126,6 +1126,15 @@
                                 <i data-lucide="download" class="w-4 h-4"></i> Download All (CSV)
                             </button>
                         </div>
+
+                        <!-- Booking Sub-tabs -->
+                        <div class="flex flex-wrap gap-2 border-b border-[#14244B]/10 mt-[-1rem]">
+                            <button onclick="window.switchBookingSubTab('pending')" id="subtab-pending" class="px-4 py-2.5 text-sm font-bold rounded-t-md border-b-2 border-[#FFB300] text-[#FFB300] bg-[#14244B] transition-colors">Pending (<span id="count-pending">0</span>)</button>
+                            <button onclick="window.switchBookingSubTab('confirmed')" id="subtab-confirmed" class="px-4 py-2.5 text-sm font-medium rounded-t-md border-b-2 border-transparent text-[#14244B]/60 hover:text-[#14244B] hover:bg-[#14244B]/5 transition-colors">Confirmed / Blocked (<span id="count-confirmed">0</span>)</button>
+                            <button onclick="window.switchBookingSubTab('passed')" id="subtab-passed" class="px-4 py-2.5 text-sm font-medium rounded-t-md border-b-2 border-transparent text-[#14244B]/60 hover:text-[#14244B] hover:bg-[#14244B]/5 transition-colors">Passed (<span id="count-passed">0</span>)</button>
+                            <button onclick="window.switchBookingSubTab('rejected')" id="subtab-rejected" class="px-4 py-2.5 text-sm font-medium rounded-t-md border-b-2 border-transparent text-[#14244B]/60 hover:text-[#14244B] hover:bg-[#14244B]/5 transition-colors">Rejected (<span id="count-rejected">0</span>)</button>
+                        </div>
+
                         <div id="admin-bookings-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
                             <!-- Booking Cards injected via JS -->
                         </div>
@@ -2343,6 +2352,24 @@
         });
 
         // 10. Admin Renders & Actions
+        let currentBookingSubTab = 'pending';
+
+        window.switchBookingSubTab = function(tabName) {
+            currentBookingSubTab = tabName;
+            const tabs = ['pending', 'confirmed', 'passed', 'rejected'];
+            tabs.forEach(t => {
+                const btn = document.getElementById('subtab-' + t);
+                if(btn) {
+                    if(t === tabName) {
+                        btn.className = "px-4 py-2.5 text-sm font-bold rounded-t-md border-b-2 border-[#FFB300] text-[#FFB300] bg-[#14244B] transition-colors";
+                    } else {
+                        btn.className = "px-4 py-2.5 text-sm font-medium rounded-t-md border-b-2 border-transparent text-[#14244B]/60 hover:text-[#14244B] hover:bg-[#14244B]/5 transition-colors";
+                    }
+                }
+            });
+            renderAdminBookings();
+        };
+
         function renderAdminBookings() {
             const container = document.getElementById('admin-bookings-container');
             const searchInput = document.getElementById('adminSearchInput');
@@ -2407,6 +2434,17 @@
             confirmedBookings.sort(sortByDateAndTime);
             passedBookings.sort((a,b) => sortByDateAndTime(b,a)); // Show most recently passed first
             rejectedBookings.sort(sortByDateAndTime);
+
+            // Update sub-tab counters
+            const countPending = document.getElementById('count-pending');
+            const countConfirmed = document.getElementById('count-confirmed');
+            const countPassed = document.getElementById('count-passed');
+            const countRejected = document.getElementById('count-rejected');
+            
+            if(countPending) countPending.innerText = pendingBookings.length;
+            if(countConfirmed) countConfirmed.innerText = confirmedBookings.length;
+            if(countPassed) countPassed.innerText = passedBookings.length;
+            if(countRejected) countRejected.innerText = rejectedBookings.length;
 
             // Reusable HTML generator for a Booking Card
             const buildCard = (b) => {
@@ -2478,28 +2516,18 @@
 
             let html = "";
 
-            // Group 1: New / Pending
-            if (pendingBookings.length > 0) {
-                html += `<div class="col-span-full mb-2"><h2 class="font-serif text-xl text-[#FFB300] border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="clock" class="w-5 h-5"></i> New / Pending Bookings</h2></div>`;
-                pendingBookings.forEach(b => html += buildCard(b));
-            }
-
-            // Group 2: Confirmed Upcoming
-            if (confirmedBookings.length > 0) {
-                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-green-700 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="calendar-check" class="w-5 h-5"></i> Confirmed Upcoming Bookings & Blocks</h2></div>`;
-                confirmedBookings.forEach(b => html += buildCard(b));
-            }
-
-            // Group 3: Passed
-            if (passedBookings.length > 0) {
-                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-[#14244B]/50 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="history" class="w-5 h-5"></i> Passed Bookings</h2></div>`;
-                passedBookings.forEach(b => html += buildCard(b));
-            }
-
-            // Group 4: Rejected
-            if (rejectedBookings.length > 0) {
-                html += `<div class="col-span-full mt-6 mb-2"><h2 class="font-serif text-xl text-red-700 border-b border-[#14244B]/10 pb-2 flex items-center gap-2"><i data-lucide="x-circle" class="w-5 h-5"></i> Rejected Bookings</h2></div>`;
-                rejectedBookings.forEach(b => html += buildCard(b));
+            if (currentBookingSubTab === 'pending') {
+                if (pendingBookings.length === 0) html = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No pending bookings found.</div>`;
+                else pendingBookings.forEach(b => html += buildCard(b));
+            } else if (currentBookingSubTab === 'confirmed') {
+                if (confirmedBookings.length === 0) html = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No confirmed bookings or blocks found.</div>`;
+                else confirmedBookings.forEach(b => html += buildCard(b));
+            } else if (currentBookingSubTab === 'passed') {
+                if (passedBookings.length === 0) html = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No passed bookings found.</div>`;
+                else passedBookings.forEach(b => html += buildCard(b));
+            } else if (currentBookingSubTab === 'rejected') {
+                if (rejectedBookings.length === 0) html = `<div class="col-span-full py-12 text-center text-[#14244B]/40">No rejected bookings found.</div>`;
+                else rejectedBookings.forEach(b => html += buildCard(b));
             }
 
             container.innerHTML = html;
